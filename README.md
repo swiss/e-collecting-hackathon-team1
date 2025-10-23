@@ -18,12 +18,12 @@
 - Dasboards & Audit-UI
 
 *Required skills*   
-- UX/UI Designer*						(Prototyp: Bürger-Flow & Behörden-Dashboard)
-- Frontend Developer*               	(React/Next.js – Login, Signatur & Bestätigung)
-- Backend Developer*                 	(API-Simulation eID-Gemeinde–Bund)
-- Security Engineer*                 	(Proof-of-Concept für eID-Verifikation & Datenintegrität)
-- DevOps*                             	(Setup & GitHub-Dokumentation, CI/CD)
-- Legal/Policy Researcher*            	(Rechtliche Rahmenbedingungen & Datenschutz)
+- UX/UI Designer						(Prototyp: Bürger-Flow & Behörden-Dashboard)
+- Frontend Developer                   	(React/Next.js – Login, Signatur & Bestätigung)
+- Backend Developer                 	(API-Simulation eID-Gemeinde–Bund)
+- Security Engineer                 	(Proof-of-Concept für eID-Verifikation & Datenintegrität)
+- DevOps                             	(Setup & GitHub-Dokumentation, CI/CD)
+- Legal/Policy Researcher            	(Rechtliche Rahmenbedingungen & Datenschutz)
 
 
 ## Documentation and Diagrams
