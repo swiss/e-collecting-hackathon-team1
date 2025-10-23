@@ -17,6 +17,15 @@
 - Blockchain (Permissioned DLT)
 - Dasboards & Audit-UI
 
+*Required skills*   
+- UX/UI Designer*						(Prototyp: Bürger-Flow & Behörden-Dashboard)
+- Frontend Developer*               	(React/Next.js – Login, Signatur & Bestätigung)
+- Backend Developer*                 	(API-Simulation eID-Gemeinde–Bund)
+- Security Engineer*                 	(Proof-of-Concept für eID-Verifikation & Datenintegrität)
+- DevOps*                             	(Setup & GitHub-Dokumentation, CI/CD)
+- Legal/Policy Researcher*            	(Rechtliche Rahmenbedingungen & Datenschutz)
+
+
 ## Documentation and Diagrams
 
 *Together, you will contribute to comparing different ways of how to implement e-collecting in Switzerland from A to Z. As part of the [participatory process](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/partizipativer_prozess.html), your solutions will be discussed in subsequent workshops and will possibly be taken into account for the official decision on the design of the federal e-collecting trials. Proper documentation is key to ensuring that your solution can be understood and evaluated:*
