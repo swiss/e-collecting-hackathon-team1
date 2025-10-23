@@ -5,6 +5,12 @@
 ## Approach
 
 *A brief description of your approach, a link/reference to the detailed description of your approach and what you have already created (if applicable). Please also mention which skills you need for your team.*
+<img width="1915" height="938" alt="Seite _1" src="https://github.com/user-attachments/assets/8181363a-f595-4dce-940a-88d944f83a9c" />
+<img width="1916" height="940" alt="Seite_2" src="https://github.com/user-attachments/assets/8d033a25-8970-44f8-93dc-004deae6fc28" />
+<img width="1912" height="940" alt="Seite_3" src="https://github.com/user-attachments/assets/1b94e0b8-5258-4799-8e59-ab7269b10a64" />
+<img width="1912" height="938" alt="Seite_4" src="https://github.com/user-attachments/assets/ba702319-890c-4712-a428-8bcf3d5e4dc8" />
+<img width="1916" height="940" alt="Seite_5" src="https://github.com/user-attachments/assets/63fa6250-f2b6-44b6-a803-6c6c001c211f" />
+
 
 ## Documentation and Diagrams
 
@@ -89,10 +95,13 @@ sequenceDiagram
 
 | Topic | (How) is it addressed? |
 | -| ------- |
-| 1 |  |
-| 2 |  |
-| 3 |  |
-| ... |  |
+| 1 | Verschiedene User-Journey, eindeutige Komitee-ID, Menschen mit Beeinträchtigungen können Ihre politischen Rechte selbstbestimmt wahrnehmen|
+| 2 | Mit Hilfe eines Dashboard werden die Daten für das Komitee in Echtzeit aufbereitet  |
+| 3 | Die Blockchain-Technologie ermöglicht die gesammelten Unterstützungsbekundungen den Sammelorganisationen eindeutig zuzuschreiben |
+| 5 | Starke Authentifizierung durch eID mit zusätzlicher Blockchain-Technologie verhindert Fälschungen |
+| 6 | Mit Blockchain-Technologie und Dashboardvisualisierung der gezählten gültigen Stimmen in Echtzeit sind unterschlagene Unterstützungsbekundungen nicht mehr möglich |
+| 7 | Stufe 3 |
+| 8 | Anbindung Papierprozess - manuelle Überprüfung direkt auf der Blockchain |
 
 ## Key Strenghts and Weaknesses
 
