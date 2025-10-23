@@ -9,8 +9,13 @@
 <img width="1916" height="940" alt="Seite_2" src="https://github.com/user-attachments/assets/8d033a25-8970-44f8-93dc-004deae6fc28" />
 <img width="1912" height="940" alt="Seite_3" src="https://github.com/user-attachments/assets/1b94e0b8-5258-4799-8e59-ab7269b10a64" />
 <img width="1912" height="938" alt="Seite_4" src="https://github.com/user-attachments/assets/ba702319-890c-4712-a428-8bcf3d5e4dc8" />
-<img width="1916" height="940" alt="Seite_5" src="https://github.com/user-attachments/assets/63fa6250-f2b6-44b6-a803-6c6c001c211f" />
+<img width="1916" height="940" alt="Seite_5" src="https://github.com/user-attachments/assets/f4624fe8-1d2a-40cc-9d6f-63554ee46a99" />
 
+
+*Three bullet points that summarize it technically*
+- API's
+- Blockchain (Permissioned DLT)
+- Dasboards & Audit-UI
 
 ## Documentation and Diagrams
 
@@ -108,12 +113,14 @@ sequenceDiagram
 *List the key strengths and weaknesses of your solution.*
 
 ### Strengths:
-- ...
-- ...
+- Integrität & Nachvollziehbarkeit (Manipulation praktisch ausgeschlossen)
+- Verteilte Verantwortung (kein Single Point of Failure)
+- Echtzeit-Transparenz für Komitees und behördliche Kontrolle (Counts / Monitoring)
 
-### Weaknesses:
-- ...
-- ...
+### Weaknesses / Challenges:
+- Komplexe Koordination zwischen Gemeinden/Kantonen/Bund
+- Datenschutz erfordert strenge Architektur (keine Klartextdaten on-chain)
+- Schlüsselmanagement-Risiko (gestohlene Schlüssel können Schaden anrichten)
 
 ## Getting Started
 
