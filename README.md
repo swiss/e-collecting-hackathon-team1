@@ -4,7 +4,6 @@
 
 ## Approach
 
-*A brief description of your approach, a link/reference to the detailed description of your approach and what you have already created (if applicable). Please also mention which skills you need for your team.*
 
 *Sales pitch*
 <img width="1915" height="938" alt="Seite _1" src="https://github.com/user-attachments/assets/8181363a-f595-4dce-940a-88d944f83a9c" />
