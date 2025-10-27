@@ -38,7 +38,7 @@ Blockchain:
 ## *Sub-challenges*
 
 - **eID-System**: Identifizierung & digitale Signatur der Stimmberechtigten (Login + Signatur)
-- **eCollecting Plattform**: Wo Bürger unterschreiben.
+- **eCollecting Plattform**: Wo Bürger unterschreiben
 - **Dashboards & Audit-UI**: Für Komitees/Kantone/öffentliche Transparenz (mit Rollen & Zugriffskontrolle)
 
 ## *Required skills*   
