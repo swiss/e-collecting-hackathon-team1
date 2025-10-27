@@ -120,18 +120,20 @@ sequenceDiagram
 | 5 | Starke Authentifizierung durch eID mit zusätzlicher Blockchain-Technologie verhindert Fälschungen |
 | 6 | Mit Blockchain-Technologie und Dashboardvisualisierung der gezählten gültigen Stimmen in Echtzeit sind unterschlagene Unterstützungsbekundungen nicht mehr möglich |
 | 7 | Stufe 3 |
-| 8 | Anbindung Papierprozess - manuelle Überprüfung direkt auf der Blockchain |
+| 8 | Anbindung Papierprozess - manuelle Überprüfung/Ergänzung direkt auf der Blockchain |
 
 ## Key Strenghts and Weaknesses
 
 *List the key strengths and weaknesses of your solution.*
 
 ### Strengths:
+
 - Integrität & Nachvollziehbarkeit (Manipulation praktisch ausgeschlossen)
 - Verteilte Verantwortung (kein Single Point of Failure)
 - Echtzeit-Transparenz für Komitees und behördliche Kontrolle (Counts / Monitoring)
 
 ### Weaknesses / Challenges:
+
 - Komplexe Koordination zwischen Gemeinden/Kantonen/Bund
 - Datenschutz erfordert strenge Architektur (keine Klartextdaten on-chain)
 - Schlüsselmanagement-Risiko (gestohlene Schlüssel können Schaden anrichten)
@@ -154,7 +156,8 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 
 ## Team Members
 
-- Marco Loppacher/GitHub Account (role)
+- Marco Loppacher/GitHub Account = LoppiNW1  (
+  Team leader) 
 - Name/GitHub Account (role)
 - Name/GitHub Account (role)
 - ...
