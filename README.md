@@ -23,9 +23,6 @@
 - Dasboards & Audit-UI
 
 ## *Main challenges*
-
-Gemeinde-API:
-- Kommuniziert mit eID, verifiziert Stimmberechtigung über kantonale Stimmregister
   
 Blockchain:
 - **Off-Chain Storage (verschlüsselt)**: Persönliche Daten und komplette Signatur-Artefakte bleiben bei der Gemeinde oder in einem verschlüsselten föderalistischen Datenspeicher
@@ -33,6 +30,9 @@ Blockchain:
 - **Blockchain-Integration** papierbasierter Unterschriften
 - **Smart Contracts / Chaincode**: Regeln Validierung, Aufnahme, Grundregeln für Revocation und Übermittlung an die zentrale Stelle
 - **Zentrale Zählkomponente (Bund/Staatskanzlei)**: Liest die Blockchain, zählt Referenzen (verifiziert mit Smart Contract Logik)
+
+Gemeinde-API:
+- Kommuniziert mit eID, verifiziert Stimmberechtigung über kantonale Stimmregister
   
 
 ## *Sub-challenges*
