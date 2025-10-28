@@ -18,9 +18,32 @@
 
 
 ## *Three bullet points that summarize it technically*
+
 - API's
 - Blockchain (Permissioned DLT)
 - Dasboards & Audit-UI
+
+## *User Journey*
+
+**1. Digitale Teilnahme (eCollecting)**:
+Bürger*in meldet sich über die eCollecting-Plattform an und loggt sich mit der eID ein.
+
+**2. Stimmrechtsprüfung**:
+Die Gemeinde-API fragt das kantonale Stimmregister ab und erhält ein OK/NICHT-OK zur Stimmberechtigung.
+
+**3. Digitale Signatur und Speicherung**:
+Wird die Unterschrift akzeptiert, erzeugt die Gemeinde ein signiertes Unterschrifts-Artefakt (z. B. PDF + Metadaten), speichert es verschlüsselt Off-Chain und erstellt daraus einen Hash (digitalen Fingerabdruck).
+
+**4. Blockchain-Eintrag**:
+Der Hash und relevante Metadaten (Zeitstempel, Gemeinde-ID, Status «gültig») werden als Transaktion in der Blockchain gespeichert. Mehrere Nodes validieren den Eintrag zur Sicherstellung der Transparenz und Unveränderlichkeit.
+→ Die Zentrale (Bund-/Staatskanzlei) kann alle gültigen Einträge automatisch zählen.
+
+**5. Papierbezogene Unterschriften (manuelle Ergänzung)**:
+Für Unterschriften, die auf Papier bei der Gemeinde eingehen, prüft die Gemeinde die Stimmberechtigung analog oder via eID-Abfrage, digitalisiert das Formular (Scan + Metadaten) und erzeugt denselben Blockchain-Hash-Prozess wie bei digitalen Einträgen.
+→ Damit erscheinen digitale und papierbasierte Unterstützungen gleichwertig in der Blockchain.
+
+**6. Komitee-Dashboard & Monitoring**:
+Komitees und Behörden können über ein Dashboard in Echtzeit sehen, wie viele gültige Unterstützungen (digital + Papier) vorliegen – ohne personenbezogene Daten, aber mit nachvollziehbarer Transparenz und Auditierbarkeit dank Blockchain.
 
 ## *Main challenges*
   
