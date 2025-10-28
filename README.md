@@ -22,6 +22,7 @@
 - API's
 - Blockchain (Permissioned DLT)
 - Dasboards & Audit-UI
+  
 
 ## *User Journey*
 
@@ -45,6 +46,7 @@ Für Unterschriften, die auf Papier bei der Gemeinde eingehen, prüft die Gemein
 **6. Komitee-Dashboard & Monitoring**:
 Komitees und Behörden können über ein Dashboard in Echtzeit sehen, wie viele gültige Unterstützungen (digital + Papier) vorliegen – ohne personenbezogene Daten, aber mit nachvollziehbarer Transparenz und Auditierbarkeit dank Blockchain.
 
+
 ## *Main challenges*
   
 Blockchain:
@@ -52,7 +54,7 @@ Blockchain:
 - **Blockchain (Permissioned DLT)**: Speichert Prüfergebnisse, Transaktions-Metadaten, Hashes von Unterschriftsartefakten, Zeitstempel, Statusflags (z. B. gültig, zurückgezogen)
 - **Blockchain-Integration** papierbasierter Unterschriften
 - **Smart Contracts / Chaincode**: Regeln Validierung, Aufnahme, Grundregeln für Revocation und Übermittlung an die zentrale Stelle
-- **Zentrale Zählkomponente (Bund/Staatskanzlei)**: Liest die Blockchain, zählt Referenzen (verifiziert mit Smart Contract Logik)
+- **Zentrale Zählkomponente (Bund-/Staatskanzlei)**: Liest die Blockchain, zählt Referenzen (verifiziert mit Smart Contract Logik)
 
 Gemeinde-API:
 - Kommuniziert mit eID, verifiziert Stimmberechtigung über kantonale Stimmregister
