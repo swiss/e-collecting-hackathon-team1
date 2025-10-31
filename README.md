@@ -160,11 +160,70 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 
 ## 4. Ablauf (User Journey)
 
-1. Bürger loggt sich via eID ein und unterschreibt.
-2. Gemeinde prüft Stimmberechtigung.
-3. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
-4. Hash + Metadaten werden in der Blockchain erfasst.
-5. Bund zählt on-chain Einträge nach Smart-Contract-Logik.
+---
+config:
+  theme: redux
+---
+flowchart TB
+    A["want to sign campaign"] --> B["paper or electronic?"]
+    B --> C["sign sheet of paper"] & D["sign campaign via E-Collecting Interface"]
+    n1["Bürgerin-Sicht"] --> A & n4["create campaign on E-Collecting Interface"] & n8["receive signature"] & n11["Receive Data from Blockcain"]
+    D --> n2["Zugriff Datenabfrage eID ersteilen"]
+    n2 --> n3["Untitled Node"]
+    C --> n3
+    n4 --> n5["receive signatures via E-Collecting Interface and paper"]
+    n5 --> n7["hand in fully signedncampaign"]
+    n2 -.-> n5
+    n7 --> n3
+    C -.-> n5
+    n7 -.-> n8
+    n8 --> n9["scan and check"]
+    n9 --> n10["Transfer Data to Blockcain"]
+    n10 -.-> n11
+    n10 --> n12["check successful?"]
+    n12 --> n13["Yes"] & n18["check again"]
+    n13 --> n3
+    n11 --> n14["chack signatures"]
+    n14 --> n15["sgnatures okey?"]
+    n15 --> n16["Yes"] & n17["No, send back Gemeinde"]
+    n16 --> n3
+    n17 --> n19["receive rechecked signatures"]
+    n19 --> n3
+    n18 --> n20["send back Bundeskanzlei"]
+    n20 --> n3
+    A@{ shape: proc}
+    B@{ shape: decision}
+    D@{ shape: rect}
+    n1@{ shape: start}
+    n4@{ shape: proc}
+    n3@{ shape: stop}
+    n12@{ shape: decision}
+    n15@{ shape: decision}
+    style A fill:transparent
+    style n1 stroke:#FFD600,color:#FF6D00
+    style n4 fill:transparent,stroke:#000000
+    style n8 stroke:#000000,fill:transparent
+    style n2 stroke:#000000
+    style n10 stroke:#D50000,fill:#FFCDD2
+    linkStyle 4 stroke:#AA00FF,fill:none
+    linkStyle 5 stroke:#2962FF,fill:none
+    linkStyle 6 stroke:#00C853,fill:none
+    linkStyle 10 stroke:#AA00FF,fill:none
+    linkStyle 11 stroke:#AA00FF,fill:none
+    linkStyle 16 stroke:#2962FF,fill:none
+    linkStyle 17 stroke:#2962FF,fill:none
+    linkStyle 19 stroke:#2962FF,fill:none
+    linkStyle 20 stroke:#2962FF,fill:none
+    linkStyle 21 stroke:#2962FF,fill:none
+    linkStyle 22 stroke:#2962FF,fill:none
+    linkStyle 23 stroke:#00C853,fill:none
+    linkStyle 24 stroke:#00C853,fill:none
+    linkStyle 25 stroke:#00C853,fill:none
+    linkStyle 26 stroke:#00C853,fill:none
+    linkStyle 28 stroke:#00C853,fill:none
+    linkStyle 29 stroke:#00C853,fill:none
+    linkStyle 30 stroke:#2962FF,fill:none
+    linkStyle 31 stroke:#2962FF,fill:none
 
 ---
 
