@@ -380,12 +380,11 @@ function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, atte
 
 ## 15. Vor- & Nachteile
 
-| Vorteile                     | Herausforderungen                   |
-| ---------------------------- | ----------------------------------- |
-| Integrität & Transparenz     | Hohe Koordination zwischen Behörden |
-| Kein Single Point of Failure | Datenschutzarchitektur komplex      |
-| Echtzeit-Auditierbarkeit     | Schlüsselmanagement kritisch        |
-| Manipulationssicher          | Gesetzliche Anpassungen nötig       |
+Vorteile	Herausforderungen
+Integrität & Transparenz	Hohe Koordination zwischen Behörden
+Kein Single Point of Failure	Datenschutzarchitektur komplex
+Echtzeit-Auditierbarkeit	Schlüsselmanagement kritisch
+Manipulationssicher	Gesetzliche Anpassungen nötig
 
 ---
 
