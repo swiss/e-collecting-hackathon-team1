@@ -86,9 +86,8 @@ Gemeinde-API:
 
 ## Documentation and Diagrams
 
-*Together, you will contribute to comparing different ways of how to implement e-collecting in Switzerland from A to Z. As part of the [participatory process](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/partizipativer_prozess.html), your solutions will be discussed in subsequent workshops and will possibly be taken into account for the official decision on the design of the federal e-collecting trials. Proper documentation is key to ensuring that your solution can be understood and evaluated:*
 
-# 🇨🇭 eCollecting - Blockchain – Technische Architektur
+# eCollecting - Blockchain – Technische Architektur
 
 ## 🧭 Übersicht
 
