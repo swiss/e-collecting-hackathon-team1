@@ -345,6 +345,176 @@ F. Audit & Nachweis (bei Bedarf)
 <img width="867" height="7023" alt="image" src="https://github.com/user-attachments/assets/d4b1359f-88b0-47d9-8612-534e3a8561e7" />
 
 
+**Documentation English Version**
+
+Technical implementation
+
+1) Brief, non-technical explanation: ‘What does the blockchain do here?’
+ 
+Imagine the blockchain as an immutable ledger that is jointly maintained by many independent custodians (local authorities, cantons, federal government). Every valid signature is recorded in this ledger with a unique entry (or a fingerprint of this entry).
+ 
+The book:
+makes it transparent who submitted how many valid signatures and when (only metadata, no sensitive personal data in plain text),
+prevents anyone from secretly changing or deleting entries later,
+allows authorities to independently track and count who signed validly and when.
+Important: Personal data (name, address, etc.) is not stored in plain text in the blockchain. Instead, verification results and cryptographic verification fingerprints (hashes) are stored — this maintains traceability but protects data privacy.
+ 
+2) Important design decision (one sentence, very important)
+Permissioned blockchain network instead of public cryptocurrency blockchain.
+Reason: only state/administrative actors (municipalities, cantons, federal government) have nodes; this clearly regulates governance, data protection and legal responsibility.
+
+Nodes: are computers in a blockchain network that store a copy of the blockchain and are responsible for validating transactions and maintaining network rules. They are the decentralised building blocks that make the network secure and functional, as they operate independently of each other and verify transactions without the need for a central authority. There are different types of nodes, such as full nodes, which store the entire blockchain, and lightweight nodes, which only use the block header information.
+3) Component overview (simple)
+eID system: Identification & digital signature of eligible voters (login + signature).
+Municipal API / eCollecting platform: Where citizens sign. Communicates with eID, verifies voting eligibility via cantonal voting registers (API).
+Off-chain storage (encrypted): Personal data and complete signature artefacts remain with the municipality or in an encrypted federalist data storage facility.
+Blockchain (permissioned DLT): Stores verification results, transaction metadata, hashes of signature artefacts, timestamps, status flags (e.g. valid, withdrawn).
+Smart contracts / chaincode: Rules for validation, recording, basic rules for revocation and transmission to the central authority.
+Central counting component (federal government/state chancellery): Reads the blockchain, counts references (verified with smart contract logic).
+Dashboards & audit UI: For committees/cantons/public transparency (with roles & access control).
+ 
+4) Step-by-step process (the ‘user journey’, in simple points)
+Citizen registers for the initiative via the municipal website/eCollecting platform and logs in with eID.
+eID provides a digital signature; municipal API queries the cantonal voting register and receives OK/NOT OK (voting eligibility).
+If the signature is accepted, the municipality generates a signed signature artefact (e.g. PDF + metadata). This artefact is stored encrypted in its off-chain storage.
+A hash (a cryptographic fingerprint) is formed from this artefact. This hash + metadata (timestamp, municipal ID, status ‘valid’) is written in a blockchain entry. The blockchain entry is validated by several nodes.
+The central office (federal/state chancellery) reads the blockchain and counts the entries that meet the validity criteria. Optional: periodic Merkle anchors (hash of the blockchain state) are anchored in a public blockchain to ensure additional immutability.
+5) What is stored on-chain — and why?
+Only minimal content:
+Hash of the signature artefact (no personal data).
+Timestamp (when it was signed).
+Municipality/canton ID (not the person).
+Status/flags (e.g. accepted, disputed, withdrawn).
+Reference/ID to the encrypted off-chain object (only readable by authorised authorities).
+Why? Data protection / GDPR compliance: No sensitive personal data in the public/distributed ledger.
+ 
+6) How does withdrawal/revocation work technically and in compliance with the law?
+Blockchain is append-only — entries are not deleted.
+A withdrawal is added as a new transaction with reference to the original hash: status is set to ‘withdrawn’, including timestamp and reason/author.
+For counting purposes, smart contract logic applies: only entries with the status ‘valid’ are counted; withdrawn entries are not counted, but are auditable (who, when, with which receipt).
+Advantage: full traceability (who withdrew when), disadvantage: theoretically, a committee cannot secretly ‘delete’ data — that is the intention (integrity > invisibility). Legally compliant processes must clearly regulate in law who is authorised to initiate withdrawal (e.g. the signatory themselves via eID).
+7) Data protection techniques (concrete and understandable)
+Hashing: A short fingerprint replaces the storage of the document on the chain.
+Off-chain encrypted storage: Complete documents remain in municipal systems, encrypted with keys managed by the respective municipality (or in a federated HSM cluster).
+Access rights: Role-based — who is allowed to decrypt documents (e.g. only the municipality and, in the case of a justified request, the law firm).
+Pseudonymisation & minimal data principle: Only the bare essentials are linked.
+Zero-knowledge proofs (ZKP) (optional, for advanced privacy): allow, for example, to prove ‘These 10 signatures are valid’ without revealing names — very useful when counts are to be publicly verified without disclosing personal details.
+ 
+8) Authentication & key protection (critical)
+The person signs using eID — this is the legal signature.
+Municipalities/authorities use hardware security modules (HSMs) or government key management services to keep private keys secure.
+Nodes (cantons/municipalities) are subject to strict TLS communication, mutual certificates and regular key rotation.
+ 
+9) Smart contracts / rules (simple)
+Smart contracts (or chaincode) define:
+How a signature entry is accepted (schema, necessary signatures).
+Validation rules (e.g. eID signature valid, voting rights OK).
+Rules for revocation (who, how, with what proof).
+Visibility rules (who is allowed to read which fields).
+ 
+10) Governance & operation
+Node operators: Each municipality/canton operates a node (or a trusted regional cluster). The federal government operates at least one node.
+Onboarding & policies: Clear operating agreements (SLA, security standards, updates).
+Security updates & audits: Regular third-party audits, pen tests, logging.
+Change management: Smart contract changes through a multi-level governance process (e.g. multi-sig votes by cantons/federal government).
+ 
+11) Advantages and disadvantages = challenges (specific)
+ 
+Advantages:
+Integrity & traceability (manipulation practically impossible)
+Distributed responsibility (no single point of failure)
+Real-time transparency for committees and official control (counts/monitoring)
+Disadvantages/challenges:
+Complex coordination between municipalities/cantons/federal government
+Data protection requires strict architecture (no plain text data on-chain)
+Key management risk (stolen keys can cause damage)
+Legal adjustments: Legal clarification necessary, e.g. regarding digital signatures, archiving obligations, responsibilities
+ 
+12) Technical options (specific recommendations, brief)
+Permissioned DLT (distributed ledger technology): e.g. enterprise frameworks such as Hyperledger Fabric, Corda or similar – suitable due to access control and privacy features. High and rapid scalability = validation of fewer participants
+Off-chain storage: Federalised, encrypted object storage (e.g. for municipalities) with unique IDs.
+Anchoring: Periodically attach a hash of the entire system to a public blockchain (additional proof of immutability, if legally necessary).
+Verifiable Credentials & DID (W3C Standards): eID integration as standardised credentials & decentralised identities for better interoperability.
+ 
+13) Threat model and countermeasures (practical)
+Manipulation of the chain: prevented in permissioned DLT through consensus and node distribution.
+Key theft (eID/municipal keys): HSMs, MFA, key recovery processes.
+Off-chain data theft: end-to-end encryption, access controls.
+Sybil/fake nodes: nodes only permitted after official review and contractual agreement.
+Privacy leaks through metadata: minimise on-chain metadata, use pseudonymisation and ZKP if necessary.
+14) Implementation proposal / roadmap (pilot → rollout)
+Design workshop & governance agreement: federal government + 2–3 pilot cantons + selected municipalities. Defines governance, SLA, legal framework.
+Proof of concept (PoC) — minimal technical version:
+Permissioned blockchain with 5 nodes (2 cantons, 2 municipalities, 1 federal government).
+eID login + simple municipal API, local off-chain storage.
+Storage of hash + status on-chain.
+Dashboard for committees.
+KPIs: validation latency, error rate, data protection audit.
+Pilot operation (one canton, several municipalities): Collect real signatures, test processes (including revocation). Legal support.
+Evaluation & scaling: Performance optimisations, training, operating models (centralised vs. federated).
+Rollout & permanent governance: All cantons, monitoring, audits.
+ 
+15) FAQ for non-technicians (very brief)
+Will my signature be made public? No — only a technical fingerprint (hash) and the minimum necessary metadata are stored on the chain; real personal data remains encrypted in the authorities' systems.
+Can someone forge my signature? No — because eID signature + verification logic + blockchain immutability work together.
+(Can I withdraw my signature? Yes — the withdrawal is documented and transparently visible on the chain, but is correctly taken into account in the count.) -> Only possible if the law is amended -> Article 73 -> see link
+What happens if a municipal node fails? Other nodes continue to validate — the system is redundant.
+Is this legal? Technically possible; however, legal clarifications/amendments and data protection checks are necessary.
+Link to law on political rights:
+
+https://www.fedlex.admin.ch/eli/cc/1978/688_688_688/de
+16) Concrete next steps (practice-oriented)
+  
+Create a short technical concept (2–4 pages) as a basis for decision-making (architecture diagram, data flow, data protection measures).
+Organise a stakeholder workshop (federal government, 2 cantons, 4 municipalities, data protection officers, lawyers).
+Build a PoC prototype (3–6 months of work): minimal permissioned DLT, eID integration, off-chain storage, counting dashboard.
+If you like, I can now create a compact 1-page architecture diagram + flow chart or a technical executive summary for presentation to stakeholders — just let me know which format you prefer (PDF, presentation, 1-page diagram) and I'll deliver it straight away.
+Manually insert paper-based signatures into blockchain -> clean, verifiable and data protection compliant
+ 
+I explain this in clear steps — technical and procedural — plus concrete recommendations (data structures, smart contract pseudocode, audit & chain of custody). Goal: every paper-based signature is transferred to the system in a legally compliant and verifiable manner without storing personal data on-chain.
+ 
+Brief overview
+Paper signatures are physically captured → digitised & stored in encrypted form → cryptographically ‘sealed’ (hash) → this hash plus an official certification signature (municipal key) and metadata are posted on-chain — individually or as a Merkle root for batch uploads. In addition, there are binding chain-of-custody receipts and multi-signer approvals prior to upload.
+Two operating modes (practical)
+Individual (itemised): Each paper signature is scanned individually, checked and recorded as a separate blockchain entry.
+→ Advantage: maximum traceability; disadvantage: high effort.
+Batch (Merkle/Bundle): Many signed sheets are digitised in a batch; a hash is generated for each sheet. A Merkle root is calculated from the hashes and only the root + batch metadata and attestations are stored on-chain. The encrypted scans remain off-chain with a reference to the hash.
+→ Advantage: high performance & scalable; disadvantage: extra work during subsequent individual audits (Merkle path must be presented).
+Both modes can be combined (e.g. small batches for a municipal meeting).
+Detailed procedure — step by step (practical, binding)
+ 
+**A. Physical recording & chain of custody (before digitisation)**
+Recording: Paper sheets are collected; each sheet is given a unique physical ID (barcode/QR code on the sheet).
+Protocol: Responsible employees fill out a chain of custody form (who collected, when, location, transfers). Each handover is signed (analogue, later digitised).
+Secure storage: Collected sheets are securely locked away until digitisation.
+**B. Digitisation & initial check by the local authority**
+Scan & image quality: Scanning in archive format (e.g. PDF/A-2) with unique file ID; barcode/QR code on image must be legible.
+Manual verification step: Responsible official verifies on paper (identity, authorisation to sign) — this is often legally required. Result: ‘valid’ / “invalid” / ‘contestable’ + comment. This verification log is digitised.
+Creation of the artefact: An artefact package is created for each sheet: {scan.pdf, verification protocol.json, physicalID, photo/metadata}.
+**C. Cryptographic sealing (in municipality)**
+Hashing: A cryptographic hash is created for each artefact — e.g. SHA-256 over the package (hash = SHA256(scan.pdf || verification protocol || physicalID)).
+Batching (optional): In batch mode: all hashes → Merkle tree → Merkle root.
+Attestation (official signature): The municipality signs the hash (or Merkle root) with its municipal signing key (HSM-secured). This is the official attestation: ‘These digitised paper signatures have been verified and originate from the documented chain of custody.’
+The signature provides proof that the municipality confirms the authenticity/verification log.
+**D. Off-chain storage (encrypted)**
+Encryption: Scans and verification logs are stored in encrypted form in a federalised off-chain storage system (e.g. municipal object stores with KMS/HSM).
+Reference data: The following is stored for each artefact: objectID, hash, physicalID, storage location, access rights, audit log.
+**E. On-chain entry**
+Prepare transaction: Payload contains at least:
+type: ‘paper_signature_batch’ or ‘paper_signature_single’
+authority_id (municipal node ID)
+hash (single hash or Merkle root)
+timestamp (RFC3339)
+batch_id (if batch)
+chain_of_custody_ref (reference to off-chain audit log)
+attestation_signature (municipal signature via hash+batch_id+timestamp)
+Smart contract validation: Smart contract checks: Is the signature valid? Is the authority authorised? Does the schema comply? Then append on-chain with status accepted (or rejected).
+Optional anchoring: Periodically (e.g. daily), a snapshot (e.g. root of roots) can be anchored in a public blockchain for additional external provability.
+**F. Audit & verification (if required)**
+Audit request: Auditor requests an artefact → Municipality provides encrypted object + Merkle path + original chain-of-custody scans + authority signature. Auditor checks hash consistency and signature, verifies on-chain entry.
+ 
+
+
 1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
 2. **Wireframes or mockups with user flow showing the user experience of different actors** (using e.g. Figma)
 3. Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.
