@@ -108,18 +108,18 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 7. [Datenschutz-Techniken](#7-datenschutz-techniken)
 8. [Authentisierung & Schlüsselmanagement](#8-authentisierung--schlüsselmanagement)
 9. [Smart Contracts](#9-smart-contracts)
-10. [Governance & Betrieb](#10-governance--betrieb)
-11. [Vor- & Nachteile](#11-vor--nachteile)
-12. [Technische Optionen](#12-technische-optionen)
-13. [Bedrohungsmodell & Gegenmaßnahmen](#13-bedrohungsmodell--gegenmaßnahmen)
-14. [Roadmap / Umsetzung](#14-roadmap--umsetzung)
-15. [FAQ (Kurzfassung)](#15-faq)
-16. [Nächste Schritte](#16-nächste-schritte)
-17. [Papierbasierte Unterschriften – Integration](#17-papierbasierte-unterschriften--integration)
-18. [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#18-beispielhafte-datenstrukturen--smart-contract-pseudocode)
-19. [Sicherheit & Rechtliches](#19-sicherheit--rechtliches)
-20. [Empfehlungen für Betrieb & Audit](#20-empfehlungen-für-betrieb--audit)
-
+10. [Papierbasierte Unterschriften – Integration](#17-papierbasierte-unterschriften--integration)
+11 [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#18-beispielhafte-datenstrukturen--smart-contract-pseudocode)
+12. [Sicherheit & Rechtliches](#19-sicherheit--rechtliches)
+13. [Empfehlungen für Betrieb & Audit](#20-empfehlungen-für-betrieb--audit)
+11. [Governance & Betrieb](#10-governance--betrieb)
+12. [Vor- & Nachteile](#11-vor--nachteile)
+13. [Technische Optionen](#12-technische-optionen)
+14. [Bedrohungsmodell & Gegenmaßnahmen](#13-bedrohungsmodell--gegenmaßnahmen)
+15. [Roadmap / Umsetzung](#14-roadmap--umsetzung)
+16. [FAQ (Kurzfassung)](#15-faq)
+17. [Nächste Schritte](#16-nächste-schritte)
+    
 ---
 
 ## 1. Was macht die Blockchain hier?
@@ -330,13 +330,17 @@ Definieren:
 
 ---
 
-## 14. Roadmap / Umsetzung
+## 14. Roadmap / Umsetzung / Nächste Schritte
 
 1. **Design-Workshop & Governance Agreement**  
 2. **PoC (5 Nodes, eID + Storage + Smart Contracts)**  
 3. **Pilotphase (ein Kanton, mehrere Gemeinden)**  
 4. **Evaluation & Skalierung**  
 5. **Rollout & permanente Governance**
+   
+- Technisches Konzept (2–4 Seiten) erstellen  
+- Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)  
+- PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard  
 
 ---
 
@@ -353,14 +357,6 @@ Ja, sobald gesetzlich geregelt (Transaktion dokumentiert Rückzug).
 
 **Was passiert, wenn eine Node ausfällt?**  
 Andere Nodes übernehmen – keine Ausfälle.
-
----
-
-## 16. Nächste Schritte
-
-- Technisches Konzept (2–4 Seiten) erstellen  
-- Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)  
-- PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard  
 
 ---
 
