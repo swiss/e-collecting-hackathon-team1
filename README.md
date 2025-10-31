@@ -202,7 +202,7 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 
 - Marco Loppacher/GitHub Account = LoppiNW1  (
   Team leader) 
-- Name/GitHub Account (role)
+- [Julia Wegmann](https://github.com/juliaNina)(Konzeptionlle Rolle)
 - Name/GitHub Account (role)
 - ...
 
