@@ -117,7 +117,9 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 16. [Technische Optionen](#16-technische-optionen)
 17. [Bedrohungsmodell & Gegenmaßnahmen](#17-bedrohungsmodell--gegenmaßnahmen)
 18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)
-    
+19. [FAQ (Kurzfassung)](#19-faq)
+20. [Nächste Schritte](#20-nächste-schritte)
+
 ---
 
 ## 1. Was macht die Blockchain hier?
@@ -235,7 +237,6 @@ flowchart TB
 
 
 ```
----
 
 ## 5. On-Chain Daten
 
@@ -290,62 +291,7 @@ Definieren:
 
 ---
 
-## 10. Governance & Betrieb
-
-- **Node-Betreiber:** Gemeinden, Kantone, Bund  
-- **Betriebsvereinbarungen:** SLAs, Sicherheitsstandards  
-- **Audits & PenTests:** Regelmäßig extern  
-- **Change Management:** Smart-Contract-Änderungen via Multi-Sig-Governance
-
----
-
-## 11. Vor- & Nachteile
-
-| Vorteile | Herausforderungen |
-|-----------|-------------------|
-| Integrität & Transparenz | Hohe Koordination zwischen Behörden |
-| Kein Single Point of Failure | Datenschutzarchitektur komplex |
-| Echtzeit-Auditierbarkeit | Schlüsselmanagement kritisch |
-| Manipulationssicher | Gesetzliche Anpassungen nötig |
-
----
-
-## 12. Technische Optionen
-
-- **DLT-Frameworks:** Hyperledger Fabric, Corda, o. ä.  
-- **Off-Chain Storage:** Föderierter verschlüsselter Object-Store  
-- **Anchoring:** Periodisch Hash auf öffentlicher Blockchain  
-- **W3C Verifiable Credentials / DIDs:** Für eID-Integration
-
----
-
-## 13. Bedrohungsmodell & Gegenmaßnahmen
-
-| Bedrohung | Gegenmaßnahme |
-|------------|---------------|
-| Manipulation | Permissioned Konsensmechanismus |
-| Key-Diebstahl | HSM, MFA, Key Recovery |
-| Datendiebstahl Off-Chain | Verschlüsselung & Zugriffsrechte |
-| Gefälschte Nodes | Zulassung nur für geprüfte Behörden |
-| Privacy Leaks | Minimale Metadaten, ZKP, Pseudonymisierung |
-
----
-
-## 18. Roadmap / Umsetzung / Nächste Schritte
-
-1. **Design-Workshop & Governance Agreement**  
-2. **PoC (5 Nodes, eID + Storage + Smart Contracts)**  
-3. **Pilotphase (ein Kanton, mehrere Gemeinden)**  
-4. **Evaluation & Skalierung**  
-5. **Rollout & permanente Governance**
-   
-- Technisches Konzept (2–4 Seiten) erstellen  
-- Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)  
-- PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard  
-
----
-
-## xx. Papierbasierte Unterschriften – Integration
+## 10. Papierbasierte Unterschriften – Integration
 
 Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewiesen werden.
 
@@ -358,7 +304,7 @@ Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewies
 
 ---
 
-## 1x. Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode
+## 11. Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode
 
 ### Beispiel-Payload (Batch-Upload)
 
@@ -379,13 +325,102 @@ Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewies
   }
 }
 
+---
 
+12. Sicherheit & Rechtliches
 
+Keine personenbezogenen Daten on-chain
 
+Off-Chain-Archivierung gesetzeskonform (PDF/A)
 
+Nur autorisierte Behörden dürfen attestieren
 
+Rückzüge dokumentiert via Revocation-Transaktion
 
+Auditlog & Timestamping verpflichtend
 
+---
+
+13. Empfehlungen für Betrieb & Audit
+
+Standardisiertes Chain-of-Custody-Formular (physisch + digital)
+
+Einheitliche Scan-Richtlinien (DPI, Format, Barcode)
+
+HSM-Signaturen statt USB-Keys
+
+Multi-Sig-Freigabe für Batch-Uploads
+
+Regelmäßige IT- & Datenschutz-Audits
+
+Rechtsklärung zu Zuständigkeit, Rückzugsrechten & Archivpflichten
+
+14. Governance & Betrieb
+
+Node-Betreiber: Gemeinden, Kantone, Bund
+
+Betriebsvereinbarungen: SLAs, Sicherheitsstandards
+
+Audits & PenTests: Regelmäßig extern
+
+Change Management: Smart-Contract-Änderungen via Multi-Sig-Governance
+
+15. Vor- & Nachteile
+Vorteile	Herausforderungen
+Integrität & Transparenz	Hohe Koordination zwischen Behörden
+Kein Single Point of Failure	Datenschutzarchitektur komplex
+Echtzeit-Auditierbarkeit	Schlüsselmanagement kritisch
+Manipulationssicher	Gesetzliche Anpassungen nötig
+16. Technische Optionen
+
+DLT-Frameworks: Hyperledger Fabric, Corda, o. ä.
+
+Off-Chain Storage: Föderierter verschlüsselter Object-Store
+
+Anchoring: Periodisch Hash auf öffentlicher Blockchain
+
+W3C Verifiable Credentials / DIDs: Für eID-Integration
+
+17. Bedrohungsmodell & Gegenmaßnahmen
+Bedrohung	Gegenmaßnahme
+Manipulation	Permissioned Konsensmechanismus
+Key-Diebstahl	HSM, MFA, Key Recovery
+Datendiebstahl Off-Chain	Verschlüsselung & Zugriffsrechte
+Gefälschte Nodes	Zulassung nur für geprüfte Behörden
+Privacy Leaks	Minimale Metadaten, ZKP, Pseudonymisierung
+18. Roadmap / Umsetzung
+
+Design-Workshop & Governance Agreement
+
+PoC (5 Nodes, eID + Storage + Smart Contracts)
+
+Pilotphase (ein Kanton, mehrere Gemeinden)
+
+Evaluation & Skalierung
+
+Rollout & permanente Governance
+
+19. FAQ
+
+Wird meine Unterschrift öffentlich?
+Nein – nur ein Hash & technische Metadaten.
+
+Kann jemand meine Unterschrift fälschen?
+Nein – eID-Signatur + Blockchain-Validierung sichern das System.
+
+Kann ich meine Unterschrift zurückziehen?
+Ja, sobald gesetzlich geregelt (Transaktion dokumentiert Rückzug).
+
+Was passiert, wenn eine Node ausfällt?
+Andere Nodes übernehmen – keine Ausfälle.
+
+20. Nächste Schritte
+
+Technisches Konzept (2–4 Seiten) erstellen
+
+Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)
+
+PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard
 
 
 
