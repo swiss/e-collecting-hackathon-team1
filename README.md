@@ -171,32 +171,33 @@ config:
 ---
 ```mermaid
 flowchart TB
-    A["want to sign campaign"] --> B["paper or electronic?"]
-    B --> C["sign sheet of paper"] & D["sign campaign via E-Collecting Interface"]
-    n1["Bürgerin-Sicht"] --> A & n4["create campaign on E-Collecting Interface"] & n8["receive signature"] & n11["Receive Data from Blockcain"]
-    D --> n2["Zugriff Datenabfrage eID ersteilen"]
+    A["will eine Initiative/Referendum unterschreiben"] --> B["Papier oder elektronisch?"]
+    B --> C["Papierbogen unterschreiben"] & D["unterschreiben via E-Collecting Interface"]
+    n1["Bürgerin-Sicht"] --> A & n4["Referendum/Initiative auf E-Collecting Interface einreichen"] & n8["Unterschriften erhalten"] & n11["Daten von Blockcain erhalten"]
+    D --> n2["Zugriff Datenabfrage eID erteilen"]
     n2 --> n3["Untitled Node"]
     C --> n3
-    n4 --> n5["receive signatures via E-Collecting Interface and paper"]
-    n5 --> n7["hand in fully signedncampaign"]
+    n4 --> n5["Unterschriften via E-Collecting Interface erhalten sowie Papierbogen"]
+    n5 --> n7["Signierter Unterschriftsbogen einreichen"]
     n2 -.-> n5
     n7 --> n3
     C -.-> n5
     n7 -.-> n8
-    n8 --> n9["scan and check"]
-    n9 --> n10["Transfer Data to Blockcain"]
+    n8 --> n9["Scanen und unterschreiben"]
+    n9 --> n10["Daten zur Blockchein transferieren"]
     n10 -.-> n11
-    n10 --> n12["check successful?"]
-    n12 --> n13["Yes"] & n18["check again"]
+    n10 --> n12["Prüfung erfolgreich?"]
+    n12 --> n13["Ja"] & n18["erneut prüfen"]
     n13 --> n3
-    n11 --> n14["chack signatures"]
-    n14 --> n15["sgnatures okey?"]
-    n15 --> n16["Yes"] & n17["No, send back Gemeinde"]
+    n11 --> n14["Unterschriften prüfen"]
+    n14 --> n15["Unterschriften okey?"]
+    n15 --> n16["Ja"] & n17["Nein, zurück zur Gemeinde"]
     n16 --> n3
-    n17 --> n19["receive rechecked signatures"]
+    n17 --> n19["geprüfte Unterschriften erhlaten"]
     n19 --> n3
-    n18 --> n20["send back Bundeskanzlei"]
+    n18 --> n20["Zurücksendung zu Bundeskanzlei"]
     n20 --> n3
+    n21["schwarz: Bürgerinnen<br>violett Initiantinnen<br>blau Gemeinde<br>grün Bund (Kanton)"]
     A@{ shape: proc}
     B@{ shape: decision}
     D@{ shape: rect}
@@ -205,6 +206,7 @@ flowchart TB
     n3@{ shape: stop}
     n12@{ shape: decision}
     n15@{ shape: decision}
+    n21@{ shape: text}
     style A fill:transparent
     style n1 stroke:#FFD600,color:#FF6D00
     style n4 fill:transparent,stroke:#000000
@@ -230,6 +232,7 @@ flowchart TB
     linkStyle 29 stroke:#00C853,fill:none
     linkStyle 30 stroke:#2962FF,fill:none
     linkStyle 31 stroke:#2962FF,fill:none
+
 
 ```
 ---
