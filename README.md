@@ -109,7 +109,7 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 8. [Authentisierung & Schlüsselmanagement](#8-authentisierung--schlüsselmanagement)
 9. [Smart Contracts](#9-smart-contracts)
 10. [Papierbasierte Unterschriften – Integration](#10-papierbasierte-unterschriften--integration)
-11 [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#11-beispielhafte-datenstrukturen--smart-contract-pseudocode)
+11. [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#11-beispielhafte-datenstrukturen--smart-contract-pseudocode)
 12. [Sicherheit & Rechtliches](#12-sicherheit--rechtliches)
 13. [Empfehlungen für Betrieb & Audit](#13-empfehlungen-für-betrieb--audit)
 14. [Governance & Betrieb](#14-governance--betrieb)
