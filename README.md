@@ -327,100 +327,123 @@ Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewies
 
 ---
 
-12. Sicherheit & Rechtliches
+### Smart-Contract-Pseudocode 
 
-Keine personenbezogenen Daten on-chain
+```javascript
+function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, attestation) {
+  require(isAuthorizedAuthority(authority_id), "Not permitted");
+  require(verifySignature(authority_id.publicKey, merkle_root || batch_id || timestamp, attestation), "Invalid attestation");
 
-Off-Chain-Archivierung gesetzeskonform (PDF/A)
+  if (batches[batch_id].exists) revert("Batch already submitted");
 
-Nur autorisierte Behörden dürfen attestieren
-
-Rückzüge dokumentiert via Revocation-Transaktion
-
-Auditlog & Timestamping verpflichtend
+  batches[batch_id] = {
+    authority: authority_id,
+    merkleRoot: merkle_root,
+    count: count,
+    timestamp: timestamp,
+    status: "accepted"
+  };
+  emit BatchSubmitted(batch_id, authority_id, merkle_root, count, timestamp);
+}
+```
 
 ---
 
-13. Empfehlungen für Betrieb & Audit
+## 12. Sicherheit & Rechtliches
 
-Standardisiertes Chain-of-Custody-Formular (physisch + digital)
+* Keine personenbezogenen Daten on-chain
+* Off-Chain-Archivierung gesetzeskonform (PDF/A)
+* Nur autorisierte Behörden dürfen attestieren
+* Rückzüge dokumentiert via Revocation-Transaktion
+* Auditlog & Timestamping verpflichtend
 
-Einheitliche Scan-Richtlinien (DPI, Format, Barcode)
+---
 
-HSM-Signaturen statt USB-Keys
+## 13. Empfehlungen für Betrieb & Audit
 
-Multi-Sig-Freigabe für Batch-Uploads
+1. Standardisiertes **Chain-of-Custody-Formular** (physisch + digital)
+2. Einheitliche **Scan-Richtlinien** (DPI, Format, Barcode)
+3. **HSM-Signaturen** statt USB-Keys
+4. **Multi-Sig-Freigabe** für Batch-Uploads
+5. Regelmäßige **IT- & Datenschutz-Audits**
+6. **Rechtsklärung** zu Zuständigkeit, Rückzugsrechten & Archivpflichten
 
-Regelmäßige IT- & Datenschutz-Audits
+---
 
-Rechtsklärung zu Zuständigkeit, Rückzugsrechten & Archivpflichten
+## 14. Governance & Betrieb
 
-14. Governance & Betrieb
+* **Node-Betreiber:** Gemeinden, Kantone, Bund
+* **Betriebsvereinbarungen:** SLAs, Sicherheitsstandards
+* **Audits & PenTests:** Regelmäßig extern
+* **Change Management:** Smart-Contract-Änderungen via Multi-Sig-Governance
 
-Node-Betreiber: Gemeinden, Kantone, Bund
+---
 
-Betriebsvereinbarungen: SLAs, Sicherheitsstandards
+## 15. Vor- & Nachteile
 
-Audits & PenTests: Regelmäßig extern
+| Vorteile                     | Herausforderungen                   |
+| ---------------------------- | ----------------------------------- |
+| Integrität & Transparenz     | Hohe Koordination zwischen Behörden |
+| Kein Single Point of Failure | Datenschutzarchitektur komplex      |
+| Echtzeit-Auditierbarkeit     | Schlüsselmanagement kritisch        |
+| Manipulationssicher          | Gesetzliche Anpassungen nötig       |
 
-Change Management: Smart-Contract-Änderungen via Multi-Sig-Governance
+---
 
-15. Vor- & Nachteile
-Vorteile	Herausforderungen
-Integrität & Transparenz	Hohe Koordination zwischen Behörden
-Kein Single Point of Failure	Datenschutzarchitektur komplex
-Echtzeit-Auditierbarkeit	Schlüsselmanagement kritisch
-Manipulationssicher	Gesetzliche Anpassungen nötig
-16. Technische Optionen
+## 16. Technische Optionen
 
-DLT-Frameworks: Hyperledger Fabric, Corda, o. ä.
+* **DLT-Frameworks:** Hyperledger Fabric, Corda, o. ä.
+* **Off-Chain Storage:** Föderierter verschlüsselter Object-Store
+* **Anchoring:** Periodisch Hash auf öffentlicher Blockchain
+* **W3C Verifiable Credentials / DIDs:** Für eID-Integration
 
-Off-Chain Storage: Föderierter verschlüsselter Object-Store
+---
 
-Anchoring: Periodisch Hash auf öffentlicher Blockchain
+## 17. Bedrohungsmodell & Gegenmaßnahmen
 
-W3C Verifiable Credentials / DIDs: Für eID-Integration
+| Bedrohung                | Gegenmaßnahme                              |
+| ------------------------ | ------------------------------------------ |
+| Manipulation             | Permissioned Konsensmechanismus            |
+| Key-Diebstahl            | HSM, MFA, Key Recovery                     |
+| Datendiebstahl Off-Chain | Verschlüsselung & Zugriffsrechte           |
+| Gefälschte Nodes         | Zulassung nur für geprüfte Behörden        |
+| Privacy Leaks            | Minimale Metadaten, ZKP, Pseudonymisierung |
 
-17. Bedrohungsmodell & Gegenmaßnahmen
-Bedrohung	Gegenmaßnahme
-Manipulation	Permissioned Konsensmechanismus
-Key-Diebstahl	HSM, MFA, Key Recovery
-Datendiebstahl Off-Chain	Verschlüsselung & Zugriffsrechte
-Gefälschte Nodes	Zulassung nur für geprüfte Behörden
-Privacy Leaks	Minimale Metadaten, ZKP, Pseudonymisierung
-18. Roadmap / Umsetzung
+---
 
-Design-Workshop & Governance Agreement
+## 18. Roadmap / Umsetzung
 
-PoC (5 Nodes, eID + Storage + Smart Contracts)
+1. **Design-Workshop & Governance Agreement**
+2. **PoC (5 Nodes, eID + Storage + Smart Contracts)**
+3. **Pilotphase (ein Kanton, mehrere Gemeinden)**
+4. **Evaluation & Skalierung**
+5. **Rollout & permanente Governance**
 
-Pilotphase (ein Kanton, mehrere Gemeinden)
+---
 
-Evaluation & Skalierung
+## 19. FAQ
 
-Rollout & permanente Governance
-
-19. FAQ
-
-Wird meine Unterschrift öffentlich?
+**Wird meine Unterschrift öffentlich?**
 Nein – nur ein Hash & technische Metadaten.
 
-Kann jemand meine Unterschrift fälschen?
+**Kann jemand meine Unterschrift fälschen?**
 Nein – eID-Signatur + Blockchain-Validierung sichern das System.
 
-Kann ich meine Unterschrift zurückziehen?
+**Kann ich meine Unterschrift zurückziehen?**
 Ja, sobald gesetzlich geregelt (Transaktion dokumentiert Rückzug).
 
-Was passiert, wenn eine Node ausfällt?
+**Was passiert, wenn eine Node ausfällt?**
 Andere Nodes übernehmen – keine Ausfälle.
 
-20. Nächste Schritte
+---
 
-Technisches Konzept (2–4 Seiten) erstellen
+## 20. Nächste Schritte
 
-Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)
+* Technisches Konzept (2–4 Seiten) erstellen
+* Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)
+* PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard
 
-PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard
+---
 
 
 
