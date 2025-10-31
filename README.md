@@ -112,13 +112,12 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 11 [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#18-beispielhafte-datenstrukturen--smart-contract-pseudocode)
 12. [Sicherheit & Rechtliches](#19-sicherheit--rechtliches)
 13. [Empfehlungen für Betrieb & Audit](#20-empfehlungen-für-betrieb--audit)
-11. [Governance & Betrieb](#10-governance--betrieb)
-12. [Vor- & Nachteile](#11-vor--nachteile)
-13. [Technische Optionen](#12-technische-optionen)
-14. [Bedrohungsmodell & Gegenmaßnahmen](#13-bedrohungsmodell--gegenmaßnahmen)
-15. [Roadmap / Umsetzung](#14-roadmap--umsetzung)
-16. [FAQ (Kurzfassung)](#15-faq)
-17. [Nächste Schritte](#16-nächste-schritte)
+14. [Governance & Betrieb](#10-governance--betrieb)
+15. [Vor- & Nachteile](#11-vor--nachteile)
+16. [Technische Optionen](#12-technische-optionen)
+17. [Bedrohungsmodell & Gegenmaßnahmen](#13-bedrohungsmodell--gegenmaßnahmen)
+18. [Roadmap / Umsetzung](#14-roadmap--umsetzung)
+19. [FAQ (Kurzfassung)](#15-faq)
     
 ---
 
@@ -344,7 +343,7 @@ Definieren:
 
 ---
 
-## 15. FAQ
+## 19. FAQ
 
 **Wird meine Unterschrift öffentlich?**  
 Nein – nur ein Hash & technische Metadaten.
