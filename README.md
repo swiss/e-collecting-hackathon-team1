@@ -171,6 +171,7 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 config:
   theme: redux
 ---
+```mermaid
 flowchart TB
     A["want to sign campaign"] --> B["paper or electronic?"]
     B --> C["sign sheet of paper"] & D["sign campaign via E-Collecting Interface"]
@@ -232,6 +233,7 @@ flowchart TB
     linkStyle 30 stroke:#2962FF,fill:none
     linkStyle 31 stroke:#2962FF,fill:none
 
+```
 ---
 
 ## 5. On-Chain Daten
