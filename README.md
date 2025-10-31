@@ -346,8 +346,6 @@ function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, atte
 }
 ```
 
----
-
 ## 12. Sicherheit & Rechtliches
 
 * Keine personenbezogenen Daten on-chain
@@ -380,11 +378,12 @@ function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, atte
 
 ## 15. Vor- & Nachteile
 
-Vorteile	Herausforderungen
-Integrität & Transparenz	Hohe Koordination zwischen Behörden
-Kein Single Point of Failure	Datenschutzarchitektur komplex
-Echtzeit-Auditierbarkeit	Schlüsselmanagement kritisch
-Manipulationssicher	Gesetzliche Anpassungen nötig
+| Vorteile                     | Herausforderungen                   |
+| ---------------------------- | ----------------------------------- |
+| Integrität & Transparenz     | Hohe Koordination zwischen Behörden |
+| Kein Single Point of Failure | Datenschutzarchitektur komplex      |
+| Echtzeit-Auditierbarkeit     | Schlüsselmanagement kritisch        |
+| Manipulationssicher          | Gesetzliche Anpassungen nötig       |
 
 ---
 
@@ -426,6 +425,7 @@ Manipulationssicher	Gesetzliche Anpassungen nötig
 * PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard
 
 ---
+
 
 
 1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
