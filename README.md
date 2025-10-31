@@ -88,11 +88,11 @@ Gemeinde-API:
 
 *Together, you will contribute to comparing different ways of how to implement e-collecting in Switzerland from A to Z. As part of the [participatory process](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/partizipativer_prozess.html), your solutions will be discussed in subsequent workshops and will possibly be taken into account for the official decision on the design of the federal e-collecting trials. Proper documentation is key to ensuring that your solution can be understood and evaluated:*
 
-# 🇨🇭 eCollecting – Blockchain-basierte Nachvollziehbarkeit für Volksinitiativen und Referenden
+# 🇨🇭 eCollecting - Blockchain – Technische Architektur
 
 ## 🧭 Übersicht
 
-Dieses Projekt beschreibt die **technische Architektur** und den **Ablauf** eines föderalen, datenschutzkonformen eCollecting-Systems, das sowohl **digitale** als auch **papierbasierte Unterschriften** sicher und nachvollziehbar verarbeitet.  
+Dieses Projekt beschreibt die **technische Architektur** und den **Ablauf** eines föderalistischen, datenschutzkonformen eCollecting-Systems, das sowohl **digitale** als auch **papierbasierte Unterschriften** sicher und nachvollziehbar verarbeitet.  
 Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbezogene Daten auf der Blockchain gespeichert werden.
 
 ---
