@@ -117,7 +117,6 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 16. [Technische Optionen](#16-technische-optionen)  
 17. [Bedrohungsmodell & Gegenmaßnahmen](#17-bedrohungsmodell--gegenmaßnahmen)  
 18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)  
-19. [Nächste Schritte](#19-nächste-schritte)
 
 ---
 
@@ -416,9 +415,7 @@ function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, atte
 4. **Evaluation & Skalierung**
 5. **Rollout & permanente Governance**
 
----
-
-## 19. Nächste Schritte
+**Nächste Schritte**
 
 * Technisches Konzept (2–4 Seiten) erstellen
 * Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)
