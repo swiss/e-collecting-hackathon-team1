@@ -359,7 +359,7 @@ Andere Nodes übernehmen – keine Ausfälle.
 
 ---
 
-## 17. Papierbasierte Unterschriften – Integration
+## xx. Papierbasierte Unterschriften – Integration
 
 Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewiesen werden.
 
@@ -372,7 +372,7 @@ Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewies
 
 ---
 
-## 18. Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode
+## 1x. Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode
 
 ### Beispiel-Payload (Batch-Upload)
 
