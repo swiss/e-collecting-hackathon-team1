@@ -159,8 +159,8 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 
 1. Bürger loggt sich via eID ein und unterschreibt.
 2. Gemeinde prüft Stimmberechtigung.
-3a. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
-3b. Papierbezogene Unterschriften (manuelle Ergänzung direkt auf der Blockchain)
+3. (a) Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
+3. (b) Papierbezogene Unterschriften (manuelle Ergänzung direkt auf der Blockchain)
 4. Hash + Metadaten werden in der Blockchain erfasst.
 5. Bund zählt on-chain Einträge nach Smart-Contract-Logik.
 
