@@ -117,7 +117,7 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 16. [Technische Optionen](#12-technische-optionen)
 17. [Bedrohungsmodell & Gegenmaßnahmen](#13-bedrohungsmodell--gegenmaßnahmen)
 18. [Roadmap / Umsetzung](#14-roadmap--umsetzung)
-19. [FAQ (Kurzfassung)](#15-faq)
+19. [FAQ (Kurzfassung)](#19-faq)
     
 ---
 
