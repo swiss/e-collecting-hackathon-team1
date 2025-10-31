@@ -108,16 +108,15 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 7. [Datenschutz-Techniken](#7-datenschutz-techniken)
 8. [Authentisierung & Schlüsselmanagement](#8-authentisierung--schlüsselmanagement)
 9. [Smart Contracts](#9-smart-contracts)
-10. [Papierbasierte Unterschriften – Integration](#17-papierbasierte-unterschriften--integration)
-11 [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#18-beispielhafte-datenstrukturen--smart-contract-pseudocode)
-12. [Sicherheit & Rechtliches](#19-sicherheit--rechtliches)
-13. [Empfehlungen für Betrieb & Audit](#20-empfehlungen-für-betrieb--audit)
-14. [Governance & Betrieb](#10-governance--betrieb)
-15. [Vor- & Nachteile](#11-vor--nachteile)
-16. [Technische Optionen](#12-technische-optionen)
-17. [Bedrohungsmodell & Gegenmaßnahmen](#13-bedrohungsmodell--gegenmaßnahmen)
-18. [Roadmap / Umsetzung](#14-roadmap--umsetzung)
-19. [FAQ (Kurzfassung)](#19-faq)
+10. [Papierbasierte Unterschriften – Integration](#10-papierbasierte-unterschriften--integration)
+11 [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#11-beispielhafte-datenstrukturen--smart-contract-pseudocode)
+12. [Sicherheit & Rechtliches](#12-sicherheit--rechtliches)
+13. [Empfehlungen für Betrieb & Audit](#13-empfehlungen-für-betrieb--audit)
+14. [Governance & Betrieb](#14-governance--betrieb)
+15. [Vor- & Nachteile](#15-vor--nachteile)
+16. [Technische Optionen](#16-technische-optionen)
+17. [Bedrohungsmodell & Gegenmaßnahmen](#17-bedrohungsmodell--gegenmaßnahmen)
+18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)
     
 ---
 
@@ -340,22 +339,6 @@ Definieren:
 - Technisches Konzept (2–4 Seiten) erstellen  
 - Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)  
 - PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard  
-
----
-
-## 19. FAQ
-
-**Wird meine Unterschrift öffentlich?**  
-Nein – nur ein Hash & technische Metadaten.
-
-**Kann jemand meine Unterschrift fälschen?**  
-Nein – eID-Signatur + Blockchain-Validierung sichern das System.
-
-**Kann ich meine Unterschrift zurückziehen?**  
-Ja, sobald gesetzlich geregelt (Transaktion dokumentiert Rückzug).
-
-**Was passiert, wenn eine Node ausfällt?**  
-Andere Nodes übernehmen – keine Ausfälle.
 
 ---
 
