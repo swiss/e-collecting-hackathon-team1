@@ -113,7 +113,7 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 12. [Sicherheit & Rechtliches](#12-sicherheit--rechtliches)  
 13. [Empfehlungen für Betrieb & Audit](#13-empfehlungen-für-betrieb--audit)  
 14. [Governance & Betrieb](#14-governance--betrieb)  
-15. [Vor- und Nachteile](#15-vor-und-nachteile)  
+15. [Vor– und Nachteile](#15-vor--und-nachteile)  
 16. [Technische Optionen](#16-technische-optionen)  
 17. [Bedrohungsmodell & Gegenmaßnahmen](#17-bedrohungsmodell--gegenmaßnahmen)  
 18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)  
@@ -376,7 +376,7 @@ function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, atte
 
 ---
 
-## 15. Vor- und Nachteile
+## 15. Vor– und Nachteile
 
 | Vorteile | Herausforderungen |
 |-----------|-------------------|
