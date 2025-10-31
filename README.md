@@ -429,8 +429,6 @@ function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, atte
 ---
 
 
-
-
 1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
 2. **Wireframes or mockups with user flow showing the user experience of different actors** (using e.g. Figma)
 3. Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.
