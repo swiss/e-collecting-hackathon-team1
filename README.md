@@ -160,7 +160,8 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 
 1. Bürger loggt sich via eID ein und unterschreibt.
 2. Gemeinde prüft Stimmberechtigung.
-3. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
+3a. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
+3b. Papierbezogene Unterschriften (manuelle Ergänzung direkt auf der Blockchain)
 4. Hash + Metadaten werden in der Blockchain erfasst.
 5. Bund zählt on-chain Einträge nach Smart-Contract-Logik.
 
@@ -291,7 +292,9 @@ Definieren:
 
 ## 10. Papierbasierte Unterschriften – Integration
 
-Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewiesen werden.
+Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewiesen werden. Für Unterschriften, die auf Papier bei der Gemeinde eingehen, prüft die Gemeinde die Stimmberechtigung analog oder via eID-Abfrage, digitalisiert das Formular (Scan + Metadaten) und erzeugt denselben Blockchain-Hash-Prozess wie bei digitalen Einträgen.
+→ Damit erscheinen digitale und papierbasierte Unterstützungen gleichwertig in der Blockchain.
+
 
 ### Zwei Modi
 
