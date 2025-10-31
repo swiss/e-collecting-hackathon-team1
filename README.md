@@ -160,6 +160,13 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 
 ## 4. Ablauf (User Journey)
 
+1. Bürger loggt sich via eID ein und unterschreibt.
+2. Gemeinde prüft Stimmberechtigung.
+3. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
+4. Hash + Metadaten werden in der Blockchain erfasst.
+5. Bund zählt on-chain Einträge nach Smart-Contract-Logik.
+
+
 ---
 config:
   theme: redux
