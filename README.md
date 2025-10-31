@@ -46,15 +46,6 @@ Für Unterschriften, die auf Papier bei der Gemeinde eingehen, prüft die Gemein
 **6. Komitee-Dashboard & Monitoring**:
 Komitees und Behörden können über ein Dashboard in Echtzeit sehen, wie viele gültige Unterstützungen (digital + Papier) vorliegen – ohne personenbezogene Daten, aber mit nachvollziehbarer Transparenz und Auditierbarkeit dank Blockchain.
 
-*English Version*
-
-**1. Digital participation (eCollecting)**: Citizens register via the eCollecting platform and log in with their eID.
-**2. Voting rights check**: The municipal API queries the cantonal voting register and receives an OK/NOT OK for voting rights.
-**3. Digital signature and storage**: If the signature is accepted, the municipality generates a signed signature artifact (e.g., PDF + metadata), stores it encrypted off-chain, and creates a hash (digital fingerprint) from it.
-**4. Blockchain entry**: The hash and relevant metadata (timestamp, municipal ID, “valid” status) are stored as a transaction in the blockchain. Multiple nodes validate the entry to ensure transparency and immutability. → The central office (federal/state chancellery) can automatically count all valid entries.
-**5. Paper-based signatures (manual addition)**: For signatures received by the municipality on paper, the municipality checks voting eligibility analogously or via eID query, digitizes the form (scan + metadata), and generates the same blockchain hash process as for digital entries. → This means that digital and paper-based support appear equally in the blockchain.
-**6. Committee dashboard & monitoring**: Committees and authorities can use a dashboard to see in real time how many valid endorsements (digital + paper) have been received—without personal data, but with traceable transparency and auditability thanks to blockchain.
-
 
 ## *Main challenges*
   
@@ -160,8 +151,8 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 1. Bürger loggt sich via eID ein und unterschreibt.
 2. Gemeinde prüft Stimmberechtigung.
 3. Verschlüsselung der Unterschrift
-   a Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
-   b Papierbezogene Unterschriften (manuelle Ergänzung direkt auf der Blockchain)
+   a. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert.
+   b. Papierbezogene Unterschriften (manuelle Ergänzung direkt auf der Blockchain)
 4. Hash + Metadaten werden in der Blockchain erfasst.
 5. Bund zählt on-chain Einträge nach Smart-Contract-Logik.
 
