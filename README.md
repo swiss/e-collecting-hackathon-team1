@@ -484,12 +484,12 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 
 ## Team Members
 
-- [Marco Loppacher](https://github.com/LoppiNW1)(
+- [Marco Loppacher](https://github.com/LoppiNW1) (
   Team leader) 
-- [Julia Wegmann](https://github.com/juliaNina)(Konzeptionlle Rolle)
-- [Thomas Gemperle](https://github.com/thomasgemperle)(Backend Developer)
-- [Hanna Franz](https://github.com/hannafranz)(Frontend Developer, UX-Designer)
-- [Nicolas Meylan](https://github.com/Nicolas2030)(Beobachter)
+- [Julia Wegmann](https://github.com/juliaNina) (Konzeptionlle Rolle)
+- [Thomas Gemperle](https://github.com/thomasgemperle) (Backend Developer)
+- [Hanna Franz](https://github.com/hannafranz) (Frontend Developer, UX-Designer)
+- [Nicolas Meylan](https://github.com/Nicolas2030) (Beobachter)
 
 ## License
 
