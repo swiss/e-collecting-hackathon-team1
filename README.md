@@ -457,13 +457,13 @@ async function submitBatch(batchData, privateKey) {
 
 | Topic | (How) is it addressed? |
 | -| ------- |
-| 1 | Verschiedene User-Journey, eindeutige Komitee-ID, Menschen mit Beeinträchtigungen können Ihre politischen Rechte selbstbestimmt wahrnehmen|
-| 2 | Mit Hilfe eines Dashboard werden die Daten für das Komitee in Echtzeit aufbereitet  |
-| 3 | Die Blockchain-Technologie ermöglicht die gesammelten Unterstützungsbekundungen den Sammelorganisationen eindeutig zuzuschreiben |
-| 5 | Starke Authentifizierung durch eID mit zusätzlicher Blockchain-Technologie verhindert Fälschungen |
-| 6 | Mit Blockchain-Technologie und Dashboardvisualisierung der gezählten gültigen Stimmen in Echtzeit sind unterschlagene Unterstützungsbekundungen nicht mehr möglich |
+| 1 | Verschiedene User-Journeys mit eindeutiger Komitee-ID werden unterstützt. Menschen mit Beeinträchtigungen können ihre politischen Rechte selbstbestimmt wahrnehmen – die eCollecting-Plattform ist barrierefrei und föderal betriebena |
+| 2 | Ein föderales Dashboard bereitet die in IPFS gespeicherten und signierten Unterstützungsdaten in Echtzeit für das Komitee auf (via CID-Registry-Streaming oder Event-Pinning)  |
+| 3 | Die IPFS-Technologie ermöglicht es, jede Unterstützung eindeutig einem Komitee und einer Gemeinde zuzuordnen – über kryptografische Content-IDs (CIDs) und digitale Signaturen |
+| 5 | Eine starke Authentifizierung über die staatliche eID und eine signierte IPFS-Registry stellen sicher, dass Einträge echt und fälschungssicher sind – jede Unterstützung trägt die geprüfte Herkunft (Gemeinde-Signatur) |
+| 6 | Durch IPFS-Pinning, CID-Registry und das Dashboard können die gezählten gültigen Unterstützungen in Echtzeit überprüft werden. Dadurch werden unterschlagene oder doppelt gezählte Unterstützungen ausgeschlossen |
 | 7 | Stufe 3 |
-| 8 | Anbindung Papierprozess - manuelle Überprüfung/Ergänzung direkt auf der Blockchain |
+| 8 | Anbindung Papierprozess: Papierunterschriften werden gescannt, digital signiert, verschlüsselt im IPFS gespeichert und mit einem CID versehen. Diese werden in der Registry verknüpft und gleichwertig zu digitalen Einträgen behandelt |
 
 ## Key Strenghts and Weaknesses
 
@@ -504,7 +504,7 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 - [Julia Wegmann](https://github.com/juliaNina) (Konzeptionlle Rolle)
 - [Thomas Gemperle](https://github.com/thomasgemperle) (Backend Developer)
 - [Hanna Franz](https://github.com/hannafranz) (Frontend Developer, UX-Designer)
-- [Nicolas Meylan](https://github.com/Nicolas2030) (Beobachter)
+- [Nicolas](https://github.com/Nicolas2030) (Beobachter)
 
 ## License
 
