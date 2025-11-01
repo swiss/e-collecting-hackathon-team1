@@ -499,8 +499,7 @@ Please read [CONTRIBUTING.md](/CONTRIBUTING.md) for details on our code of condu
 
 ## Team Members
 
-- [Marco Loppacher](https://github.com/LoppiNW1) (
-  Team leader) 
+- [Marco Loppacher](https://github.com/LoppiNW1) (Team leader) 
 - [Julia Wegmann](https://github.com/juliaNina) (Konzeptionelle Rolle)
 - [Thomas Gemperle](https://github.com/thomasgemperle) (Backend Developer)
 - [Hanna Franz](https://github.com/hannafranz) (Frontend Developer, UX-Designer)
