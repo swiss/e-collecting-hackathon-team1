@@ -145,8 +145,10 @@ Jede gültige Unterschrift wird als **verschlüsseltes Objekt** gespeichert und 
 📘 **Wichtig:** Keine Personendaten im Klartext!
 Gespeichert werden nur verschlüsselte Artefakte & Metadaten-Hashes.
 
-*Prototyp-Image der Implementation* 
-https://github.com/swiss/e-collecting-hackathon-team1/issues/10#issuecomment-3476431009
+**Prototyp-Image der Implementation** 
+
+<img width="1658" height="737" alt="image" src="https://github.com/user-attachments/assets/9bf790de-7972-4afe-9437-80cc2cc6b068" />
+
 
 ---
 
