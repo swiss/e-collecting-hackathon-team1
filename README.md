@@ -388,7 +388,7 @@ function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, atte
 ## 16. Technische Optionen
 
 * **DLT-Frameworks:** Hyperledger Fabric, Corda, o. ä.
-* **Off-Chain Storage:** Föderierter verschlüsselter Object-Store
+* **Off-Chain Storage:** Pro Gemeinde verschlüsselter Object-Store
 * **Anchoring:** Periodisch Hash auf öffentlicher Blockchain
 * **W3C Verifiable Credentials / DIDs:** Für eID-Integration
 
