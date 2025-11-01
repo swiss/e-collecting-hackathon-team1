@@ -69,7 +69,7 @@ Ein Dashboard zeigt in Echtzeit:
 - Verteilung nach Gemeinden/Kantonen
 - Auditierbarkeit via CIDs
 
-Keine personenbezogenen Daten – nur verifizierbare Hashes & Metadaten.
+**Keine personenbezogenen Daten** – nur verifizierbare Hashes & Metadaten.
 
 **7. Bürger*innen-Selbstprüfung**
 
@@ -79,15 +79,20 @@ Nur der Hash wird angezeigt – keine Identitätsdaten.
 
 ## *Main challenges*
   
-Blockchain:
-- **Off-Chain Storage (verschlüsselt)**: Persönliche Daten und komplette Signatur-Artefakte bleiben bei der Gemeinde oder in einem verschlüsselten föderalistischen Datenspeicher
-- **Blockchain (Permissioned DLT)**: Speichert Prüfergebnisse, Transaktions-Metadaten, Hashes von Unterschriftsartefakten, Zeitstempel, Statusflags (z. B. gültig, zurückgezogen)
-- **Blockchain-Integration** papierbasierter Unterschriften
-- **Smart Contracts / Chaincode**: Regeln Validierung, Aufnahme, Grundregeln für Revocation und Übermittlung an die zentrale Stelle
-- **Zentrale Zählkomponente (Bund-/Staatskanzlei)**: Liest die Blockchain, zählt Referenzen (verifiziert mit Smart Contract Logik)
+**Off-Chain Storage (Verschlüsselt)**
+- Persönliche Daten und vollständige Signatur-Artefakte bleiben bei der Gemeinde oder in einem verschlüsselten IPFS-Cluster.
+- Speicherung erfolgt Ende-zu-Ende-verschlüsselt (AES-256-GCM).
 
-Gemeinde-API:
-- Kommuniziert mit eID, verifiziert Stimmberechtigung über kantonale Stimmregister
+**IPFS-Registry (föderalistisches Index-System)**
+
+- Verwaltet CIDs, Metadaten und Statusflags.
+- Nur autorisierte Behördennodes dürfen Einträge vornehmen.
+- Unterstützt Versionsverwaltung über IPNS (z. B. bei Revocation oder Neusignatur).
+
+**Integration papierbasierter Unterschriften**
+- Scans werden lokal verifiziert, anschließend gehasht, verschlüsselt und hochgeladen.
+- CID + Metadaten gehen in die zentrale Registry.
+- Papier- und Digitalvorgänge sind vollständig interoperabel.
   
 
 ## *Sub-challenges*
