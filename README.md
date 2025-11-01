@@ -5,17 +5,6 @@
 ## Final presentation
 
 
-**Sales pitch**
-<img width="1915" height="938" alt="Seite _1" src="https://github.com/user-attachments/assets/8181363a-f595-4dce-940a-88d944f83a9c" />
-<img width="1916" height="940" alt="Seite_2" src="https://github.com/user-attachments/assets/8d033a25-8970-44f8-93dc-004deae6fc28" />
-<img width="1912" height="940" alt="Seite_3" src="https://github.com/user-attachments/assets/1b94e0b8-5258-4799-8e59-ab7269b10a64" />
-<img width="1912" height="938" alt="Seite_4" src="https://github.com/user-attachments/assets/ba702319-890c-4712-a428-8bcf3d5e4dc8" />
-<img width="1916" height="940" alt="Seite_5" src="https://github.com/user-attachments/assets/f4624fe8-1d2a-40cc-9d6f-63554ee46a99" />
-
-**Sales pitch version in PDF**
-[Voll-medienbruchfreies-eCollecting_sales pitch.pdf](https://github.com/user-attachments/files/23126915/Voll-medienbruchfreies-eCollecting_sales.pitch.pdf)
-
-
 
 ## *Three bullet points that summarize it technically*
 
@@ -113,11 +102,6 @@ Nur der Hash wird angezeigt – keine Identitätsdaten.
 ## Documentation and Diagrams
 
 
-Klar — hier ist dein Text **neu formuliert für IPFS** (statt Blockchain), im **gleichen GitHub-kompatiblen Format** inklusive Markdown-Struktur, Emojis und Tabellen.
-Ich habe alle blockchain-spezifischen Teile auf **IPFS (InterPlanetary File System)** übertragen und gleichzeitig den föderalistischen, datenschutzkonformen Charakter des Projekts beibehalten.
-
----
-
 # eCollecting – **IPFS – Technische Architektur**
 
 ## 🧭 Übersicht
@@ -178,7 +162,7 @@ Gespeichert werden nur verschlüsselte Artefakte & Metadaten-Hashes.
 | Komponente                                      | Beschreibung                                           |
 | ----------------------------------------------- | ------------------------------------------------------ |
 | **eID-System**                                  | Authentifizierung & Signatur der Stimmberechtigten     |
-| **Gemeinde-API / eCollecting-Plattform**        | Webplattform für Bürger, prüft Stimmberechtigung       |
+| **eCollecting-Plattform**                       | Wo Bürger unterschreiben        |
 | **Verschlüsselter Object-Store (IPFS Cluster)** | Speicherung persönlicher Artefakte, Signaturen, Scans  |
 | **CID-Registry (Index-Dienst)**                 | Erfasst Hashes, Status & Metadaten                     |
 | **Integrity Proof Service**                     | Verifiziert Integrität & Zeitstempel                   |
@@ -411,9 +395,6 @@ async function submitBatch(batchData, privateKey) {
 * PoC-Prototyp (3–6 Monate): Private IPFS-Cluster + eID + Audit-Dashboard
 
 ---
-
-Möchtest du, dass ich daraus direkt ein **README.md** für GitHub mit Titel, Lizenzabschnitt und visueller Projektstruktur (Ordnerbaum + Beispielkonfiguration) mache?
-
 
 
 1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
