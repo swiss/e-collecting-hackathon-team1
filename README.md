@@ -156,7 +156,7 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 
    a. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert. 
    
-   b. Papierbezogene Unterschriften (manuelle Ergänzung direkt auf der Blockchain)
+   b. Papierbezogene Unterschriften (manuelle Ergänzung durch Gemeinde direkt auf der Blockchain)
    
 4. Hash + Metadaten werden in der Blockchain erfasst.
 5. Bund zählt on-chain Einträge nach Smart-Contract-Logik.
