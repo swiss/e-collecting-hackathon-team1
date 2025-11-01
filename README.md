@@ -300,7 +300,7 @@ flowchart TB
 
 ## 9. Metadaten & Integritätsnachweis
 
-Eine separate föderierte **CID-Registry** speichert:
+Eine separate föderalistische **CID-Registry** speichert:
 
 * CID
 * Signatur der hochladenden Behörde
