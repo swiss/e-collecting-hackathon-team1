@@ -6,7 +6,6 @@
 
 
 
-  
 
 ## *User Journey*
 
@@ -150,7 +149,7 @@ Gespeichert werden nur verschlüsselte Artefakte & Metadaten-Hashes.
 
 ## 2. Wichtige Design-Entscheidung
 
-> **Federiertes IPFS-Netzwerk (Private IPFS Cluster)** – Nur staatliche Akteure (Gemeinden, Kantone, Bund) betreiben Nodes.
+> **IPFS-Netzwerk (Private IPFS Cluster)** – Nur staatliche Akteure (Gemeinden, Kantone, Bund) betreiben Nodes.
 > Dadurch sind **Governance, Datenschutz und rechtliche Verantwortung** klar geregelt.
 
 ---
