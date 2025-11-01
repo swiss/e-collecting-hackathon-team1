@@ -19,7 +19,7 @@
 
 ## *Three bullet points that summarize it technically*
 
-- API's
+- Nodes oder API's
 - Blockchain (Permissioned DLT)
 - Dasboards & Audit-UI
   
@@ -45,6 +45,8 @@ Für Unterschriften, die auf Papier bei der Gemeinde eingehen, prüft die Gemein
 
 **6. Komitee-Dashboard & Monitoring**:
 Komitees und Behörden können über ein Dashboard in Echtzeit sehen, wie viele gültige Unterstützungen (digital + Papier) vorliegen – ohne personenbezogene Daten, aber mit nachvollziehbarer Transparenz und Auditierbarkeit dank Blockchain.
+
+**7. Unterschriftkontrollmöglicheit auf Blockchain**: Bürger*in kann prüfen, ob seine Unterschrift richtig gezählt worden ist.
 
 
 ## *Main challenges*
