@@ -80,71 +80,77 @@ Gemeinde-API:
 ## Documentation and Diagrams
 
 
-# eCollecting - Blockchain – Technische Architektur
+Klar — hier ist dein Text **neu formuliert für IPFS** (statt Blockchain), im **gleichen GitHub-kompatiblen Format** inklusive Markdown-Struktur, Emojis und Tabellen.
+Ich habe alle blockchain-spezifischen Teile auf **IPFS (InterPlanetary File System)** übertragen und gleichzeitig den föderalistischen, datenschutzkonformen Charakter des Projekts beibehalten.
+
+---
+
+# eCollecting – **IPFS – Technische Architektur**
 
 ## 🧭 Übersicht
 
-Dieses Projekt beschreibt die **technische Architektur** und den **Ablauf** eines föderalistischen, datenschutzkonformen eCollecting-Systems, das sowohl **digitale** als auch **papierbasierte Unterschriften** sicher und nachvollziehbar verarbeitet.  
-Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbezogene Daten auf der Blockchain gespeichert werden.
+Dieses Projekt beschreibt die **technische Architektur** und den **Ablauf** eines föderalistischen, datenschutzkonformen eCollecting-Systems, das sowohl **digitale** als auch **papierbasierte Unterschriften** sicher und nachvollziehbar verarbeitet.
+Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbezogene Daten auf zentralen Servern gespeichert werden.
 
 ---
 
 ## 📑 Inhaltsverzeichnis
 
-1. [Was macht die Blockchain hier?](#1-was-macht-die-blockchain-hier)  
-2. [Wichtige Design-Entscheidung](#2-wichtige-design-entscheidung)  
-3. [Systemkomponenten](#3-systemkomponenten)  
-4. [Ablauf (User Journey)](#4-ablauf-user-journey)  
-5. [On-Chain Daten](#5-on-chain-daten)  
-6. [Revocation / Rückzug](#6-revocation--rückzug)  
-7. [Datenschutz-Techniken](#7-datenschutz-techniken)  
-8. [Authentisierung & Schlüsselmanagement](#8-authentisierung--schlüsselmanagement)  
-9. [Smart Contracts](#9-smart-contracts)  
-10. [Papierbasierte Unterschriften – Integration](#10-papierbasierte-unterschriften--integration)  
-11. [Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode](#11-beispielhafte-datenstrukturen--smart-contract-pseudocode)  
-12. [Sicherheit & Rechtliches](#12-sicherheit--rechtliches)  
-13. [Empfehlungen für Betrieb & Audit](#13-empfehlungen-für-betrieb--audit)  
-14. [Governance & Betrieb](#14-governance--betrieb)  
-15. [Vor und Nachteile](#15-vor-und-nachteile)  
-16. [Technische Optionen](#16-technische-optionen)  
-17. [Bedrohungsmodell & Gegenmaßnahmen](#17-bedrohungsmodell--gegenmaßnahmen)  
-18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)  
+1. [Was macht IPFS hier?](#1-was-macht-ipfs-hier)
+2. [Wichtige Design-Entscheidung](#2-wichtige-design-entscheidung)
+3. [Systemkomponenten](#3-systemkomponenten)
+4. [Ablauf (User Journey)](#4-ablauf-user-journey)
+5. [IPFS-Datenobjekte](#5-ipfs-datenobjekte)
+6. [Revocation / Rückzug](#6-revocation--rückzug)
+7. [Datenschutz-Techniken](#7-datenschutz-techniken)
+8. [Authentisierung & Schlüsselmanagement](#8-authentisierung--schlüsselmanagement)
+9. [Metadaten & Integritätsnachweis](#9-metadaten--integritätsnachweis)
+10. [Papierbasierte Unterschriften – Integration](#10-papierbasierte-unterschriften--integration)
+11. [Beispielhafte Datenstrukturen & Upload-Logik](#11-beispielhafte-datenstrukturen--upload-logik)
+12. [Sicherheit & Rechtliches](#12-sicherheit--rechtliches)
+13. [Empfehlungen für Betrieb & Audit](#13-empfehlungen-für-betrieb--audit)
+14. [Governance & Betrieb](#14-governance--betrieb)
+15. [Vor und Nachteile](#15-vor-und-nachteile)
+16. [Technische Optionen](#16-technische-optionen)
+17. [Bedrohungsmodell & Gegenmaßnahmen](#17-bedrohungsmodell--gegenmaßnahmen)
+18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)
 
 ---
 
-## 1. Was macht die Blockchain hier?
+## 1. Was macht IPFS hier?
 
-Stell dir die Blockchain als ein **unveränderliches Buch** vor, das von **Gemeinden, Kantonen und dem Bund** gemeinsam geführt wird.  
-Jede gültige Unterschrift wird mit einem eindeutigen Fingerabdruck (Hash) eingetragen.
+Stell dir IPFS als ein **verteiltes Archivsystem** vor, das von **Gemeinden, Kantonen und dem Bund** gemeinsam betrieben wird.
+Jede gültige Unterschrift wird als **verschlüsseltes Objekt** gespeichert und über ihren **Inhalts-Hash (CID)** eindeutig identifiziert.
 
 **Funktionen:**
-- Nachvollziehbar: Wer wann wie viele Unterschriften übermittelt hat.  
-- Manipulationssicher: Keine nachträglichen Änderungen möglich.  
-- Dezentral: Behörden können unabhängig prüfen und zählen.  
 
-📘 **Wichtig:** Keine Personendaten im Klartext!  
-Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
+* Nachvollziehbar: Wer wann wie viele Unterschriften abgelegt hat.
+* Manipulationssicher: Inhalte können nachträglich nicht verändert werden.
+* Dezentral: Behörden können unabhängig prüfen und zählen.
+
+📘 **Wichtig:** Keine Personendaten im Klartext!
+Gespeichert werden nur verschlüsselte Artefakte & Metadaten-Hashes.
 
 ---
 
 ## 2. Wichtige Design-Entscheidung
 
-> **Permissioned Blockchain** – Nur staatliche Akteure (Gemeinden, Kantone, Bund) betreiben Nodes.  
+> **Federiertes IPFS-Netzwerk (Private IPFS Cluster)** – Nur staatliche Akteure (Gemeinden, Kantone, Bund) betreiben Nodes.
 > Dadurch sind **Governance, Datenschutz und rechtliche Verantwortung** klar geregelt.
 
 ---
 
 ## 3. Systemkomponenten
 
-| Komponente | Beschreibung |
-|-------------|---------------|
-| **eID-System** | Authentifizierung & Signatur der Stimmberechtigten |
-| **Gemeinde-API / eCollecting-Plattform** | Webplattform für Bürger, prüft Stimmberechtigung |
-| **Off-Chain Storage** | Verschlüsselte Speicherung persönlicher Daten & Artefakte |
-| **Blockchain (DLT)** | Speichert Prüfergebnisse, Hashes & Statusflags |
-| **Smart Contracts** | Regeln Validierung, Rückzug & Counting |
-| **Zentrale Zählkomponente (Bund)** | Aggregiert & zählt on-chain Einträge |
-| **Dashboards / Audit-UI** | Transparenz & Monitoring für Behörden & Öffentlichkeit |
+| Komponente                                      | Beschreibung                                           |
+| ----------------------------------------------- | ------------------------------------------------------ |
+| **eID-System**                                  | Authentifizierung & Signatur der Stimmberechtigten     |
+| **Gemeinde-API / eCollecting-Plattform**        | Webplattform für Bürger, prüft Stimmberechtigung       |
+| **Verschlüsselter Object-Store (IPFS Cluster)** | Speicherung persönlicher Artefakte, Signaturen, Scans  |
+| **CID-Registry (Index-Dienst)**                 | Erfasst Hashes, Status & Metadaten                     |
+| **Integrity Proof Service**                     | Verifiziert Integrität & Zeitstempel                   |
+| **Zentrale Zählkomponente (Bund)**              | Aggregiert & prüft Metadaten                           |
+| **Dashboards / Audit-UI**                       | Transparenz & Monitoring für Behörden & Öffentlichkeit |
 
 ---
 
@@ -152,156 +158,107 @@ Gespeichert werden nur Prüfergebnisse & kryptografische Hashes.
 
 1. Bürger loggt sich via eID ein und unterschreibt.
 2. Gemeinde prüft Stimmberechtigung.
-3. Verschlüsselung der Unterschrift:
+3. Verschlüsselung & Upload der Unterschrift:
 
-   a. Unterschrift wird als Artefakt verschlüsselt off-chain gespeichert. 
-   
-   b. Papierbezogene Unterschriften (manuelle Ergänzung durch Gemeinde direkt auf der Blockchain)
-   
-4. Hash + Metadaten werden in der Blockchain erfasst.
-5. Bund zählt on-chain Einträge nach Smart-Contract-Logik.
-
+   * Signatur-Artefakt wird verschlüsselt.
+   * Artefakt + Metadaten werden auf IPFS hochgeladen.
+   * CID wird im föderalen Index-System registriert.
+4. Bund zählt registrierte CIDs und prüft Integrität über Hashes.
 
 ---
-config:
-  theme: redux
----
+
 ```mermaid
 flowchart TB
-    A["will eine Initiative/Referendum unterschreiben"] --> B["Papier oder elektronisch?"]
-    B --> C["Papierbogen unterschreiben"] & D["unterschreiben via E-Collecting Interface"]
-    n1["Bürgerin-Sicht"] --> A & n4["Referendum/Initiative auf E-Collecting Interface einreichen"] & n8["Unterschriften erhalten"] & n11["Daten von Blockcain erhalten"]
-    D --> n2["Zugriff Datenabfrage eID erteilen"]
-    n2 --> n3["Untitled Node"]
+    A["Bürger möchte Initiative/Referendum unterschreiben"] --> B["Papier oder elektronisch?"]
+    B --> C["Papierbogen unterschreiben"] & D["elektronisch via eCollecting Interface"]
+    n1["Bürgerin-Sicht"] --> A & n4["Initiative im eCollecting-Interface einreichen"] & n8["Unterschriften erhalten"] & n11["Metadaten aus IPFS abrufen"]
+    D --> n2["Zugriff auf eID-Daten bestätigen"]
+    n2 --> n3["CID generieren und Objekt verschlüsselt hochladen"]
     C --> n3
-    n4 --> n5["Unterschriften via E-Collecting Interface erhalten sowie Papierbogen"]
-    n5 --> n7["Signierter Unterschriftsbogen einreichen"]
-    n2 -.-> n5
-    n7 --> n3
-    C -.-> n5
-    n7 -.-> n8
-    n8 --> n9["Scanen und unterschreiben"]
-    n9 --> n10["Daten zur Blockchein transferieren"]
-    n10 -.-> n11
-    n10 --> n12["Prüfung erfolgreich?"]
-    n12 --> n13["Ja"] & n18["erneut prüfen"]
-    n13 --> n3
-    n11 --> n14["Unterschriften prüfen"]
-    n14 --> n15["Unterschriften okey?"]
-    n15 --> n16["Ja"] & n17["Nein, zurück zur Gemeinde"]
-    n16 --> n3
-    n17 --> n19["geprüfte Unterschriften erhlaten"]
-    n19 --> n3
-    n18 --> n20["Zurücksendung zu Bundeskanzlei"]
-    n20 --> n3
-    n21["schwarz: Bürgerinnen<br>violett Initiantinnen<br>blau Gemeinde<br>grün Bund (Kanton)"]
-    A@{ shape: proc}
-    B@{ shape: decision}
-    D@{ shape: rect}
-    n1@{ shape: start}
-    n4@{ shape: proc}
-    n3@{ shape: stop}
-    n12@{ shape: decision}
-    n15@{ shape: decision}
-    n21@{ shape: text}
-    style A fill:transparent
-    style n1 stroke:#FFD600,color:#FF6D00
-    style n4 fill:transparent,stroke:#000000
-    style n8 stroke:#000000,fill:transparent
-    style n2 stroke:#000000
-    style n10 stroke:#D50000,fill:#FFCDD2
-    linkStyle 4 stroke:#AA00FF,fill:none
-    linkStyle 5 stroke:#2962FF,fill:none
-    linkStyle 6 stroke:#00C853,fill:none
-    linkStyle 10 stroke:#AA00FF,fill:none
-    linkStyle 11 stroke:#AA00FF,fill:none
-    linkStyle 16 stroke:#2962FF,fill:none
-    linkStyle 17 stroke:#2962FF,fill:none
-    linkStyle 19 stroke:#2962FF,fill:none
-    linkStyle 20 stroke:#2962FF,fill:none
-    linkStyle 21 stroke:#2962FF,fill:none
-    linkStyle 22 stroke:#2962FF,fill:none
-    linkStyle 23 stroke:#00C853,fill:none
-    linkStyle 24 stroke:#00C853,fill:none
-    linkStyle 25 stroke:#00C853,fill:none
-    linkStyle 26 stroke:#00C853,fill:none
-    linkStyle 28 stroke:#00C853,fill:none
-    linkStyle 29 stroke:#00C853,fill:none
-    linkStyle 30 stroke:#2962FF,fill:none
-    linkStyle 31 stroke:#2962FF,fill:none
-
-
+    n4 --> n5["Unterschriften via Plattform & Papierbogen erhalten"]
+    n5 --> n7["Signierte Unterschriftsbögen einreichen"]
+    n7 --> n9["Scannen, Metadaten erstellen, CID registrieren"]
+    n9 --> n10["Integritätsnachweis & Speicherung im IPFS-Cluster"]
+    n10 --> n11
+    n11 --> n12["Zählung und Prüfung durch Bund"]
+    n21["Farben: Bürger (gelb), Initiant (violett), Gemeinde (blau), Bund (grün)"]
 ```
 
-## 5. On-Chain Daten
+---
+
+## 5. IPFS-Datenobjekte
 
 **Gespeichert wird nur das Minimum:**
 
-- Hash des Unterschriftsartefakts  
-- Zeitstempel  
-- Gemeinde/Kanton-ID  
-- Statusflag (gültig, zurückgezogen, etc.)  
-- Referenz zum verschlüsselten Off-Chain-Objekt  
+* Verschlüsseltes Unterschriftsartefakt
+* CID (Content Identifier, z. B. `Qm...xyz`)
+* Zeitstempel & Prüfsumme
+* Gemeinde/Kanton-ID
+* Statusflag (gültig, zurückgezogen etc.)
+* Optionale Referenz zu Papierdokument (Merkle-Root oder UUID)
 
-**Datenschutz:** DSG/GDPR-konform – keine sensiblen Personendaten on-chain.
+**Datenschutz:** DSG/GDPR-konform – keine sensiblen Personendaten unverschlüsselt gespeichert.
 
 ---
 
 ## 6. Revocation / Rückzug
 
-- Blockchain = *append-only*: Einträge werden nie gelöscht.  
-- Rückzug erfolgt über neue Transaktion, die auf den ursprünglichen Hash verweist.  
-- Nur Status wird geändert (`valid → revoked`).  
-- Smart Contract berücksichtigt nur gültige Einträge bei Zählung.  
+* IPFS ist *content-addressed* – Änderungen erzeugen neue CIDs.
+* Rückzug erfolgt durch **neue Version des Metadatenobjekts** mit `status: revoked`.
+* Historie bleibt nachvollziehbar über die Versionskette (`IPNS` oder Registry-Verlauf).
 
-→ **Nachvollziehbar, transparent, revisionssicher.**
+→ **Transparent, unveränderlich, revisionssicher.**
 
 ---
 
 ## 7. Datenschutz-Techniken
 
-- **Hashing** statt Klartext  
-- **Off-Chain Verschlüsselung** (HSM/KMS-basiert)  
-- **Rollenbasierte Zugriffsrechte**  
-- **Pseudonymisierung & Minimaldatenprinzip**  
-- **Zero-Knowledge Proofs (ZKP)** (optional): Nachweis von Gültigkeit ohne Offenlegung von Personendaten
+* **Ende-zu-Ende-Verschlüsselung** aller Artefakte
+* **CID-basierte Pseudonymisierung**
+* **Private IPFS Cluster + Access Tokens**
+* **Zero-Knowledge Proofs (ZKP)** optional zur Validierung
+* **Keine Metadatenlecks** durch dedizierte Gateway-Architektur
 
 ---
 
 ## 8. Authentisierung & Schlüsselmanagement
 
-- Bürger signiert mit **eID** (juristische Signatur)  
-- Gemeinden/Behörden nutzen **HSMs** zur Schlüsselsicherung  
-- **TLS mit gegenseitiger Authentifizierung**, regelmäßige Schlüsselrotation
+* Bürger signiert mit **eID** (juristische Signatur)
+* Gemeinden & Behörden nutzen **HSMs oder KMS** für Schlüssel
+* **Signierte IPFS-Pins** (Authentizität gesichert)
+* **TLS + gegenseitige Authentifizierung** zwischen Nodes
 
 ---
 
-## 9. Smart Contracts
+## 9. Metadaten & Integritätsnachweis
 
-Definieren:
-- Validierungsregeln (z. B. eID gültig)  
-- Revocation-Regeln  
-- Sichtbarkeitsregeln  
-- Anforderungen für Zählung & Reporting
+Eine separate föderierte **CID-Registry** speichert:
+
+* CID
+* Signatur der hochladenden Behörde
+* Zeitstempel
+* Status (valid / revoked / counted)
+* Prüfsumme (Hash über Dateiinhalt)
+
+Optional kann regelmäßig ein **Merkle-Root über alle Tages-CIDs** gebildet und als Audit-Beleg (z. B. in öffentlichem Journal oder Blockchain-Anker) abgelegt werden.
 
 ---
 
 ## 10. Papierbasierte Unterschriften – Integration
 
-Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewiesen werden. Für Unterschriften, die auf Papier bei der Gemeinde eingehen, prüft die Gemeinde die Stimmberechtigung analog oder via eID-Abfrage, digitalisiert das Formular (Scan + Metadaten) und erzeugt denselben Blockchain-Hash-Prozess wie bei digitalen Einträgen.
-→ Damit erscheinen digitale und papierbasierte Unterstützungen gleichwertig in der Blockchain.
-
+Auch **Papierunterschriften** können über IPFS nachgewiesen werden.
+Gemeinden digitalisieren geprüfte Papierbögen, erzeugen daraus **Hashes & CIDs**, und laden die verschlüsselten Artefakte in den Cluster.
 
 ### Zwei Modi
 
-| Modus | Beschreibung |
-|--------|--------------|
-| **Einzeln (Itemized)** | Jede Unterschrift einzeln gehasht und on-chain gebucht |
-| **Batch (Merkle-Root)** | Viele Blätter → einzelne Hashes → Merkle-Root on-chain (performanter) |
+| Modus                   | Beschreibung                                                             |
+| ----------------------- | ------------------------------------------------------------------------ |
+| **Einzeln (Itemized)**  | Jede Unterschrift einzeln gehasht und auf IPFS gespeichert               |
+| **Batch (Merkle-Root)** | Mehrere Scans → Hashbaum → Merkle-Root-Objekt gespeichert (performanter) |
 
 ---
 
-## 11. Beispielhafte Datenstrukturen & Smart-Contract-Pseudocode
+## 11. Beispielhafte Datenstrukturen & Upload-Logik
 
 ### Beispiel-Payload (Batch-Upload)
 
@@ -313,114 +270,117 @@ Auch **manuelle Unterschriften** können digital & blockchain-basiert nachgewies
   "merkle_root": "0x9f2...ab3",
   "count": 138,
   "timestamp": "2025-10-27T09:42:00Z",
-  "chain_of_custody_ref": "coc://gemeinde-zh-123/BATCH-2025-10-27-001",
+  "ipfs_cid": "QmXyz123...",
   "attestation_signature": "MEUCIQDb...",
   "metadata": {
-    "scans_storage_ref": "s3://federated-gemeinden/zh/2025/BATCH-001.enc",
+    "storage_ref": "ipfs://QmXyz123...",
     "scan_format": "PDF/A-2",
     "hash_algorithm": "SHA-256"
   }
 }
+```
 
----
-
-### Smart-Contract-Pseudocode 
+### Beispielhafte Upload-Logik (Pseudocode)
 
 ```javascript
-function submitBatch(authority_id, batch_id, merkle_root, count, timestamp, attestation) {
-  require(isAuthorizedAuthority(authority_id), "Not permitted");
-  require(verifySignature(authority_id.publicKey, merkle_root || batch_id || timestamp, attestation), "Invalid attestation");
-
-  if (batches[batch_id].exists) revert("Batch already submitted");
-
-  batches[batch_id] = {
-    authority: authority_id,
-    merkleRoot: merkle_root,
-    count: count,
-    timestamp: timestamp,
-    status: "accepted"
-  };
-  emit BatchSubmitted(batch_id, authority_id, merkle_root, count, timestamp);
+async function submitBatch(batchData, privateKey) {
+  const cid = await ipfs.add(encrypt(batchData));
+  const attestation = sign(privateKey, cid + batchData.timestamp);
+  registry.add({
+    cid,
+    authority: batchData.authority_id,
+    merkle_root: batchData.merkle_root,
+    count: batchData.count,
+    status: "accepted",
+    attestation
+  });
+  emit("BatchSubmitted", cid, batchData.authority_id, batchData.count);
 }
 ```
 
+---
+
 ## 12. Sicherheit & Rechtliches
 
-* Keine personenbezogenen Daten on-chain
+* Keine Klartextdaten in IPFS
 * Off-Chain-Archivierung gesetzeskonform (PDF/A)
-* Nur autorisierte Behörden dürfen attestieren
-* Rückzüge dokumentiert via Revocation-Transaktion
-* Auditlog & Timestamping verpflichtend
+* Autorisierte Behörden signieren Uploads
+* Rückzüge dokumentiert über neue Versionen
+* Auditlog & Zeitstempelung verpflichtend
 
 ---
 
 ## 13. Empfehlungen für Betrieb & Audit
 
-1. Standardisiertes **Chain-of-Custody-Formular** (physisch + digital)
-2. Einheitliche **Scan-Richtlinien** (DPI, Format, Barcode)
-3. **HSM-Signaturen** statt USB-Keys
-4. **Multi-Sig-Freigabe** für Batch-Uploads
-5. Regelmäßige **IT- & Datenschutz-Audits**
-6. **Rechtsklärung** zu Zuständigkeit, Rückzugsrechten & Archivpflichten
+1. Standardisierte **CID-Registry** mit Audit-Trail
+2. Einheitliche **Scan-Richtlinien** (DPI, Format, Hash-Algorithmen)
+3. **HSM-Signaturen** für Uploads
+4. **Multi-Sig-Genehmigungen** bei Batch-Uploads
+5. **Datenschutz- & Sicherheits-Audits** jährlich
+6. **Juristische Klärung** zu Aufbewahrung & Rückzugspflichten
 
 ---
 
 ## 14. Governance & Betrieb
 
-* **Node-Betreiber:** Gemeinden, Kantone, Bund
-* **Betriebsvereinbarungen:** SLAs, Sicherheitsstandards
+* **Cluster-Betreiber:** Gemeinden, Kantone, Bund
+* **Betriebsvereinbarungen:** SLAs, Datenschutz, Replikationsrichtlinien
 * **Audits & PenTests:** Regelmäßig extern
-* **Change Management:** Smart-Contract-Änderungen via Multi-Sig-Governance
+* **Governance via Multi-Sig & föderierte Kontrolle**
 
 ---
 
 ## 15. Vor– und Nachteile
 
-| Vorteile | Herausforderungen |
-|-----------|-------------------|
-| Integrität & Transparenz | Hohe Koordination zwischen Behörden |
-| Kein Single Point of Failure | Datenschutzarchitektur komplex |
-| Echtzeit-Auditierbarkeit | Schlüsselmanagement kritisch |
-| Manipulationssicher | Gesetzliche Anpassungen nötig |
+| Vorteile                                | Herausforderungen                         |
+| --------------------------------------- | ----------------------------------------- |
+| Dezentral, kein Single Point of Failure | Koordination vieler Behörden              |
+| DSG-konform durch Verschlüsselung       | Aufwändiges Schlüsselmanagement           |
+| Transparente Integritätsnachweise       | Versionierung & Zugriffskontrolle komplex |
+| Geringe Abhängigkeit von Blockchain     | Rechtliche Anerkennung neu zu definieren  |
 
 ---
 
 ## 16. Technische Optionen
 
-* **DLT-Frameworks:** Hyperledger Fabric, Corda, o. ä.
-* **Off-Chain Storage:** Pro Gemeinde verschlüsselter Object-Store
-* **Anchoring:** Periodisch Hash auf öffentlicher Blockchain
-* **W3C Verifiable Credentials / DIDs:** Für eID-Integration
+* **IPFS-Cluster (Private Network Mode)**
+* **libp2p Access Control Lists (ACL)**
+* **Merkle-DAG für Batch-Strukturen**
+* **IPNS für Revocation und Updates**
+* **W3C Verifiable Credentials / DIDs** für eID-Integration
 
 ---
 
 ## 17. Bedrohungsmodell & Gegenmaßnahmen
 
-| Bedrohung                | Gegenmaßnahme                              |
-| ------------------------ | ------------------------------------------ |
-| Manipulation             | Permissioned Konsensmechanismus            |
-| Key-Diebstahl            | HSM, MFA, Key Recovery                     |
-| Datendiebstahl Off-Chain | Verschlüsselung & Zugriffsrechte           |
-| Gefälschte Nodes         | Zulassung nur für geprüfte Behörden        |
-| Privacy Leaks            | Minimale Metadaten, ZKP, Pseudonymisierung |
+| Bedrohung            | Gegenmaßnahme                             |
+| -------------------- | ----------------------------------------- |
+| Manipulierte Uploads | Digitale Signaturen, CID-Validierung      |
+| Key-Diebstahl        | HSM, MFA, Key Recovery                    |
+| Datenlecks           | Verschlüsselung, private Cluster          |
+| Unautorisierte Pins  | Node-ACL, Access Tokens                   |
+| Privacy Leaks        | Pseudonymisierung, ZKP, Gateway-Isolation |
 
 ---
 
 ## 18. Roadmap / Umsetzung
 
 1. **Design-Workshop & Governance Agreement**
-2. **PoC (5 Nodes, eID + Storage + Smart Contracts)**
+2. **PoC (5 IPFS-Nodes + eID + CID-Registry)**
 3. **Pilotphase (ein Kanton, mehrere Gemeinden)**
 4. **Evaluation & Skalierung**
-5. **Rollout & permanente Governance**
+5. **Rollout & föderaler Dauerbetrieb**
 
 **Nächste Schritte**
 
-* Technisches Konzept (2–4 Seiten) erstellen
+* Technisches Konzept (2–4 Seiten) ausarbeiten
 * Stakeholder-Workshop (Bund, Kantone, Gemeinden, Datenschutz, Juristen)
-* PoC-Prototyp bauen (3–6 Monate): Permissioned DLT + eID-Integration + Dashboard
+* PoC-Prototyp (3–6 Monate): Private IPFS-Cluster + eID + Audit-Dashboard
 
 ---
+
+Möchtest du, dass ich daraus direkt ein **README.md** für GitHub mit Titel, Lizenzabschnitt und visueller Projektstruktur (Ordnerbaum + Beispielkonfiguration) mache?
+
 
 
 1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
