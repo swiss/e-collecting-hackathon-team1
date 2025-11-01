@@ -9,7 +9,7 @@
 
 ## *User Journey*
 
-**Anmimation-Prototyp**
+**Animation-Prototyp**
 https://github.com/swiss/e-collecting-hackathon-team1/issues/9#issue-3577729865
 
 **1. Digitale Teilnahme**
