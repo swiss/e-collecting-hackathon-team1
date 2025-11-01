@@ -26,28 +26,56 @@
 
 ## *User Journey*
 
-**1. Digitale Teilnahme (eCollecting)**:
-Bürger*in meldet sich über die eCollecting-Plattform an und loggt sich mit der eID ein.
+**1. Digitale Teilnahme**
 
-**2. Stimmrechtsprüfung**:
-Die Gemeinde-API fragt das kantonale Stimmregister ab und erhält ein OK/NICHT-OK zur Stimmberechtigung.
+Bürger*in meldet sich über die eCollecting-Plattform an und authentifiziert sich mit einer staatlich geprüften eID.
+Nach erfolgreichem Login wird ein Unterschriftsvorgang gestartet.
 
-**3. Digitale Signatur und Speicherung**:
-Wird die Unterschrift akzeptiert, erzeugt die Gemeinde ein signiertes Unterschrifts-Artefakt (z. B. PDF + Metadaten), speichert es verschlüsselt Off-Chain und erstellt daraus einen Hash (digitalen Fingerabdruck).
+**2. Stimmrechtsprüfung**
 
-**4. Blockchain-Eintrag**:
-Der Hash und relevante Metadaten (Zeitstempel, Gemeinde-ID, Status «gültig») werden als Transaktion in der Blockchain gespeichert. Mehrere Nodes validieren den Eintrag zur Sicherstellung der Transparenz und Unveränderlichkeit.
-→ Die Zentrale (Bund-/Staatskanzlei) kann alle gültigen Einträge automatisch zählen.
+Die Gemeinde-API fragt das kantonale Stimmregister ab und prüft, ob die Person stimmberechtigt ist.
+Ergebnis: OK/NICHT-OK – wird nur für die Prüfung genutzt, nicht gespeichert.
 
-**5. Papierbezogene Unterschriften (manuelle Ergänzung)**:
-Für Unterschriften, die auf Papier bei der Gemeinde eingehen, prüft die Gemeinde die Stimmberechtigung analog oder via eID-Abfrage, digitalisiert das Formular (Scan + Metadaten) und erzeugt denselben Blockchain-Hash-Prozess wie bei digitalen Einträgen.
-→ Damit erscheinen digitale und papierbasierte Unterstützungen gleichwertig in der Blockchain.
+**3. Digitale Signatur & Speicherung**
 
-**6. Komitee-Dashboard & Monitoring**:
-Komitees und Behörden können über ein Dashboard in Echtzeit sehen, wie viele gültige Unterstützungen (digital + Papier) vorliegen – ohne personenbezogene Daten, aber mit nachvollziehbarer Transparenz und Auditierbarkeit dank Blockchain.
+Wenn gültig:
 
-**7. Unterschriftkontrollmöglicheit auf Blockchain**: Bürger*in kann prüfen, ob seine Unterschrift richtig gezählt worden ist.
+- Gemeinde erstellt ein signiertes Unterschrifts-Artefakt (z. B. PDF + Metadaten).
+- Artefakt wird verschlüsselt im föderalistischen IPFS-Cluster gespeichert.
+- Aus dem Inhalt entsteht ein CID (Content Identifier) – der eindeutige Hash des Objekts.
 
+Ein CID-Registry speichert Metadaten wie Zeitstempel, Gemeinde-ID und Status.
+
+**4. IPFS-Einträge & Validierung**
+
+- Gemeinde übermittelt: CID, Zeitstempel, Gemeinde-ID, Status („gültig“, „zurückgezogen“).
+- Mehrere IPFS-Nodes (Gemeinden, Kantone, Bund) pinnen und replizieren das Objekt.
+- Die Bundes- oder Staatskanzlei kann über die Registry alle gültigen Einträge zählen – ohne Zugriff auf personenbezogene Daten.
+
+**5. Papierbezogene Unterschriften**
+
+Für physische Unterschriften:
+
+1. Gemeinde prüft Stimmberechtigung.
+2. Scan + Metadaten werden erstellt und verschlüsselt gespeichert.
+3. Ein CID wird generiert und in der Registry eingetragen.
+→ Papier und Digital sind vollständig gleichwertig abgebildet.
+
+**6. Komitee-Dashboard & Monitoring**
+
+Ein Dashboard zeigt in Echtzeit:
+
+- Anzahl gültiger Unterstützungen (digital & Papier)
+- Verteilung nach Gemeinden/Kantonen
+- Auditierbarkeit via CIDs
+
+Keine personenbezogenen Daten – nur verifizierbare Hashes & Metadaten.
+
+**7. Bürger*innen-Selbstprüfung**
+
+Bürger*innen können prüfen, ob ihre Unterschrift registriert wurde:
+→ über einen CID-Lookup oder eine anonyme Prüfreferenz.
+Nur der Hash wird angezeigt – keine Identitätsdaten.
 
 ## *Main challenges*
   
