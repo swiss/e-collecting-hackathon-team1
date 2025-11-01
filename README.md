@@ -6,11 +6,6 @@
 
 
 
-## *Three bullet points that summarize it technically*
-
-- Nodes oder API's
-- Blockchain (Permissioned DLT)
-- Dasboards & Audit-UI
   
 
 ## *User Journey*
@@ -186,19 +181,68 @@ Gespeichert werden nur verschlüsselte Artefakte & Metadaten-Hashes.
 
 ```mermaid
 flowchart TB
-    A["Bürger möchte Initiative/Referendum unterschreiben"] --> B["Papier oder elektronisch?"]
-    B --> C["Papierbogen unterschreiben"] & D["elektronisch via eCollecting Interface"]
-    n1["Bürgerin-Sicht"] --> A & n4["Initiative im eCollecting-Interface einreichen"] & n8["Unterschriften erhalten"] & n11["Metadaten aus IPFS abrufen"]
-    D --> n2["Zugriff auf eID-Daten bestätigen"]
-    n2 --> n3["CID generieren und Objekt verschlüsselt hochladen"]
+    A["will eine Initiative/Referendum unterschreiben"] --> B["Papier oder elektronisch?"]
+    B --> C["Papierbogen unterschreiben"] & D["unterschreiben via E-Collecting Interface"]
+    n1["Bürgerin-Sicht"] --> A & n4["Referendum/Initiative auf E-Collecting Interface einreichen"] & n8["Unterschriften erhalten"] & n11["Daten von IPFS erhalten"]
+    D --> n2["Zugriff Datenabfrage eID erteilen"]
+    n2 --> n3["Untitled Node"]
     C --> n3
-    n4 --> n5["Unterschriften via Plattform & Papierbogen erhalten"]
-    n5 --> n7["Signierte Unterschriftsbögen einreichen"]
-    n7 --> n9["Scannen, Metadaten erstellen, CID registrieren"]
-    n9 --> n10["Integritätsnachweis & Speicherung im IPFS-Cluster"]
-    n10 --> n11
-    n11 --> n12["Zählung und Prüfung durch Bund"]
-    n21["Farben: Bürger (gelb), Initiant (violett), Gemeinde (blau), Bund (grün)"]
+    n4 --> n5["Unterschriften via E-Collecting Interface erhalten sowie Papierbogen"]
+    n5 --> n7["Signierter Unterschriftsbogen einreichen"]
+    n2 -.-> n5
+    n7 --> n3
+    C -.-> n5
+    n7 -.-> n8
+    n8 --> n9["Scanen und unterschreiben"]
+    n9 --> n10["Bürger-Pub GPG key + SHA512sum der anonymisierten ID zu IPFS transferieren"]
+    n10 -.-> n11
+    n10 --> n12["Prüfung erfolgreich?"]
+    n12 --> n13["Ja"] & n18["erneut prüfen"]
+    n13 --> n3
+    n11 --> n14["Unterschriften prüfen"]
+    n14 --> n15["Unterschriften okey?"]
+    n15 --> n16["Ja"] & n17["Nein, zurück zur Gemeinde"]
+    n16 --> n3
+    n17 --> n19["geprüfte Unterschriften erhlaten"]
+    n19 --> n3
+    n18 --> n20["Zurücksendung zu Bundeskanzlei"]
+    n20 --> n3
+    n21["schwarz: Bürgerinnen<br>violett Initiantinnen<br>blau Gemeinde<br>grün Bund (Kanton)"]
+    A@{ shape: proc}
+    B@{ shape: decision}
+    D@{ shape: rect}
+    n1@{ shape: start}
+    n4@{ shape: proc}
+    n3@{ shape: stop}
+    n12@{ shape: decision}
+    n15@{ shape: decision}
+    n21@{ shape: text}
+    style A fill:transparent
+    style n1 stroke:#FFD600,color:#FF6D00
+    style n4 fill:transparent,stroke:#000000
+    style n8 stroke:#000000,fill:transparent
+    style n2 stroke:#000000
+    style n10 stroke:#D50000,fill:#FFCDD2
+    linkStyle 4 stroke:#AA00FF,fill:none
+    linkStyle 5 stroke:#2962FF,fill:none
+    linkStyle 6 stroke:#00C853,fill:none
+    linkStyle 10 stroke:#AA00FF,fill:none
+    linkStyle 11 stroke:#AA00FF,fill:none
+    linkStyle 16 stroke:#2962FF,fill:none
+    linkStyle 17 stroke:#2962FF,fill:none
+    linkStyle 19 stroke:#2962FF,fill:none
+    linkStyle 20 stroke:#2962FF,fill:none
+    linkStyle 21 stroke:#2962FF,fill:none
+    linkStyle 22 stroke:#2962FF,fill:none
+    linkStyle 23 stroke:#00C853,fill:none
+    linkStyle 24 stroke:#00C853,fill:none
+    linkStyle 25 stroke:#00C853,fill:none
+    linkStyle 26 stroke:#00C853,fill:none
+    linkStyle 28 stroke:#00C853,fill:none
+    linkStyle 29 stroke:#00C853,fill:none
+    linkStyle 30 stroke:#2962FF,fill:none
+    linkStyle 31 stroke:#2962FF,fill:none
+
 ```
 
 ---
