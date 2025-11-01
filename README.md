@@ -443,18 +443,6 @@ async function submitBatch(batchData, privateKey) {
 
 ---
 
-
-1. **[Mermaid](https://mermaid.js.org/) diagram(s) showing interactions and data flows between actors, software and infrastructure components of your solution over time.**
-2. **Wireframes or mockups with user flow showing the user experience of different actors** (using e.g. Figma)
-3. Explain how you addressed the topics presented in the [guidelines](https://www.bk.admin.ch/bk/de/home/politische-rechte/e-collecting/aktuelles.html), filling in the template below.
-4. List the key strengths and weaknesses of your solution.
-5. Explanation of features used (if applicable)
-6. A requirements file with all packages and versions used (if applicable)
-7. Environment code to be run (if applicable)
-
-*For your reference, you will find below an example of two diagrams showing interactions and data flows between actors, software and infrastructure components of ordering a pizza via a third-party delivery website over time. Please replace them with diagrams for your solution.*
-
-
 ## User Experience
 
 *Add or reference wireframes or mockups with user flow showing the user experience of different actors.*
