@@ -394,7 +394,7 @@ async function submitBatch(batchData, privateKey) {
 * **Cluster-Betreiber:** Gemeinden, Kantone, Bund
 * **Betriebsvereinbarungen:** SLAs, Datenschutz, Replikationsrichtlinien
 * **Audits & PenTests:** Regelmäßig extern
-* **Governance via Multi-Sig & föderierte Kontrolle**
+* **Governance via Multi-Sig & gemeinsame Kontrolle**
 
 ---
 
@@ -437,7 +437,7 @@ async function submitBatch(batchData, privateKey) {
 2. **PoC (5 IPFS-Nodes + eID + CID-Registry)**
 3. **Pilotphase (ein Kanton, mehrere Gemeinden)**
 4. **Evaluation & Skalierung**
-5. **Rollout & föderaler Dauerbetrieb**
+5. **Rollout & Betrieb**
 
 **Nächste Schritte**
 
