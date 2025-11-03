@@ -26,26 +26,26 @@ Ergebnis: OK/NICHT-OK – wird nur für die Prüfung genutzt, nicht gespeichert.
 
 Wenn gültig:
 
-- Gemeinde erstellt ein signiertes Unterschrifts-Artefakt (z. B. PDF + Metadaten).
-- Artefakt wird verschlüsselt im föderalistischen IPFS-Cluster gespeichert.
-- Aus dem Inhalt entsteht ein CID (Content Identifier) – der eindeutige Hash des Objekts.
+- Gemeinde erstellt ein signiertes Unterschrifts-Artefakt (z. B. PDF + Metadaten)
+- Artefakt wird verschlüsselt im föderalistischen IPFS-Cluster gespeichert
+- Aus dem Inhalt entsteht ein CID (Content Identifier) – der eindeutige Hash des Objekts
 
 Ein CID-Registry speichert Metadaten wie Zeitstempel, Gemeinde-ID und Status.
 
 **4. IPFS-Einträge & Validierung**
 
-- Gemeinde übermittelt: CID, Zeitstempel, Gemeinde-ID, Status („gültig“, „zurückgezogen“).
-- Mehrere IPFS-Nodes (Gemeinden, Kantone, Bund) pinnen und replizieren das Objekt.
-- Die Bundes- oder Staatskanzlei kann über die Registry alle gültigen Einträge zählen – ohne Zugriff auf personenbezogene Daten.
+- Gemeinde übermittelt: CID, Zeitstempel, Gemeinde-ID, Status („gültig“, „zurückgezogen“)
+- Mehrere IPFS-Nodes (Gemeinden, Kantone, Bund) pinnen und replizieren das Objekt
+- Die Bundes- oder Staatskanzlei kann über die Registry alle gültigen Einträge zählen – ohne Zugriff auf personenbezogene Daten
 
 **5. Papierbezogene Unterschriften**
 
 Für physische Unterschriften:
 
-1. Gemeinde prüft Stimmberechtigung.
-2. Scan + Metadaten werden erstellt und verschlüsselt gespeichert.
-3. Ein CID wird generiert und in der Registry eingetragen.
-→ Papier und Digital sind vollständig gleichwertig abgebildet.
+1. Gemeinde prüft Stimmberechtigung
+2. Scan + Metadaten werden erstellt und verschlüsselt gespeichert
+3. Ein CID wird generiert und in der Registry eingetragen  
+→ **Papier und Digital** sind vollständig gleichwertig abgebildet
 
 **6. Komitee-Dashboard & Monitoring**
 
@@ -59,26 +59,26 @@ Ein Dashboard zeigt in Echtzeit:
 
 **7. Bürger*innen-Selbstprüfung**
 
-Bürger*innen können prüfen, ob ihre Unterschrift registriert wurde:
-→ über einen CID-Lookup oder eine anonyme Prüfreferenz.
+Bürger*innen können prüfen, ob ihre Unterschrift registriert wurde:  
+→ über einen CID-Lookup oder eine anonyme Prüfreferenz
 Nur der Hash wird angezeigt – keine Identitätsdaten.
 
 ## *Main challenges*
   
 **Off-Chain Storage (Verschlüsselt)**
-- Persönliche Daten und vollständige Signatur-Artefakte bleiben bei der Gemeinde oder in einem verschlüsselten IPFS-Cluster.
-- Speicherung erfolgt Ende-zu-Ende-verschlüsselt (AES-256-GCM).
+- Persönliche Daten und vollständige Signatur-Artefakte bleiben bei der Gemeinde oder in einem verschlüsselten IPFS-Cluster
+- Speicherung erfolgt Ende-zu-Ende-verschlüsselt (AES-256-GCM)
 
 **IPFS-Registry (föderalistisches Index-System)**
 
-- Verwaltet CIDs, Metadaten und Statusflags.
-- Nur autorisierte Behördennodes dürfen Einträge vornehmen.
-- Unterstützt Versionsverwaltung über IPNS (z. B. bei Revocation oder Neusignatur).
+- Verwaltet CIDs, Metadaten und Statusflags
+- Nur autorisierte Behördennodes dürfen Einträge vornehmen
+- Unterstützt Versionsverwaltung über IPNS (z. B. bei Revocation oder Neusignatur)
 
 **Integration papierbasierter Unterschriften**
-- Scans werden lokal verifiziert, anschließend gehasht, verschlüsselt und hochgeladen.
-- CID + Metadaten gehen in die zentrale Registry.
-- Papier- und Digitalvorgänge sind vollständig interoperabel.
+- Scans werden lokal verifiziert, anschließend gehasht, verschlüsselt und hochgeladen
+- CID + Metadaten gehen in die zentrale Registry
+- Papier- und Digitalvorgänge sind vollständig interoperabel
   
 
 ## *Sub-challenges*
