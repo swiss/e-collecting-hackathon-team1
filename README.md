@@ -101,14 +101,14 @@ Nur der Hash wird angezeigt – keine Identitätsdaten.
 
 # eCollecting – **IPFS – Technische Architektur**
 
-## 🧭 Übersicht
+## Übersicht
 
 Dieses Projekt beschreibt die **technische Architektur** und den **Ablauf** eines föderalistischen, datenschutzkonformen eCollecting-Systems, das sowohl **digitale** als auch **papierbasierte Unterschriften** sicher und nachvollziehbar verarbeitet.
 Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbezogene Daten auf zentralen Servern gespeichert werden.
 
 ---
 
-## 📑 Inhaltsverzeichnis
+##  Inhaltsverzeichnis
 
 1. [Was macht IPFS hier?](#1-was-macht-ipfs-hier)
 2. [Wichtige Design-Entscheidung](#2-wichtige-design-entscheidung)
@@ -142,7 +142,7 @@ Jede gültige Unterschrift wird als **verschlüsseltes Objekt** gespeichert und 
 * Manipulationssicher: Inhalte können nachträglich nicht verändert werden.
 * Dezentral: Behörden können unabhängig prüfen und zählen.
 
-📘 **Wichtig:** Keine Personendaten im Klartext!
+ **Wichtig:** Keine Personendaten im Klartext!
 Gespeichert werden nur verschlüsselte Artefakte & Metadaten-Hashes.
 
 **Prototyp-Image der Implementation** 
