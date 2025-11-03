@@ -471,15 +471,17 @@ async function submitBatch(batchData, privateKey) {
 
 ### Strengths:
 
-- **Integrität & Nachvollziehbarkeit**: Manipulation praktisch ausgeschlossen – jede gespeicherte Datei ist über ihren **Content Identifier (CID)** eindeutig überprüfbar
+- **Integrität & Nachvollziehbarkeit**: Manipulation praktisch ausgeschlossen  
+→ jede gespeicherte Datei ist über ihren **Content Identifier (CID)** eindeutig überprüfbar
 - **Verteilte Verantwortung**: Keine zentrale Instanz – Gemeinden, Kantone und Bund betreiben gemeinsam den **IPFS-Cluster**    
-→ Kein Single Point of Failure.
+→ Kein Single Point of Failure
 - **Echtzeit-Transparenz**: Komitees und Behörden sehen über das **Dashboard** jederzeit die aktuelle Anzahl gültiger Unterstützungen (CID-basiert)    
 → Auditierbar und nachvollziehbar ohne personenbezogene Daten
 
 ### Weaknesses / Challenges:
 
-- **Komplexe Koordination**: Erfordert enge organisatorische Abstimmung zwischen Gemeinden/Kantonen/Bund (Node-Governance, Replikationsrichtlinien)
+- **Komplexe Koordination**: Erfordert enge organisatorische Abstimmung zwischen Gemeinden/Kantonen/Bund  
+  → Node-Governance, Replikationsrichtlinien)
 - **Datenschutz + Architektur**: Strikte Trennung von **Daten (verschlüsselt im IPFS)** und **Metadaten (in der CID-Registry)** notwendig, um DSG-/DSGVO-Konformität sicherzustellen   
 → Keine Klartextdaten oder personenbezogenen Informationen im IPFS-Index
 - **Schlüssel- & Zugriffsmanagement**: Verlust oder Diebstahl von Signatur-Schlüsseln (z. B. der Gemeinden) kann Integrität gefährden   
