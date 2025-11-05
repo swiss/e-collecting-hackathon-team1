@@ -127,7 +127,10 @@ Ziel: **Integrität, Transparenz und Nachvollziehbarkeit**, ohne dass personenbe
 15. [Vor und Nachteile](#15-vor-und-nachteile)
 16. [Technische Optionen](#16-technische-optionen)
 17. [Bedrohungsmodell & Gegenmaßnahmen](#17-bedrohungsmodell--gegenmaßnahmen)
-18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)
+18. [Roadmap / Umsetzung](#18-roadmap--umsetzung)  
+
+> **Hinweis:** Die Dokumentation ist mit Unterstützung von ChatGPT erstellt worden.
+
 
 ---
 
