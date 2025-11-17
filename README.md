@@ -203,7 +203,7 @@ flowchart TB
     n7 --> n3
     C -.-> n5
     n7 -.-> n8
-    n8 --> n9["Scanen und unterschreiben"]
+    n8 --> n9["Scannen und unterschreiben"]
     n9 --> n10["Bürger-Pub GPG key + SHA512sum der anonymisierten ID zu IPFS transferieren"]
     n10 -.-> n11
     n10 --> n12["Prüfung erfolgreich?"]
