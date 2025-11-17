@@ -460,7 +460,7 @@ async function submitBatch(batchData, privateKey) {
 
 | Topic | (How) is it addressed? |
 | -| ------- |
-| 1 | Verschiedene User-Journeys mit eindeutiger Komitee-ID werden unterstützt. Menschen mit Beeinträchtigungen können ihre politischen Rechte selbstbestimmt wahrnehmen – die eCollecting-Plattform ist barrierefrei und föderal betriebena |
+| 1 | Verschiedene User-Journeys mit eindeutiger Komitee-ID werden unterstützt. Menschen mit Beeinträchtigungen können ihre politischen Rechte selbstbestimmt wahrnehmen – die eCollecting-Plattform ist barrierefrei und föderal betrieben |
 | 2 | Ein Dashboard bereitet die in IPFS gespeicherten und signierten Unterstützungsdaten in Echtzeit für das Komitee auf (via CID-Registry-Streaming oder Event-Pinning)  |
 | 3 | Die IPFS-Technologie ermöglicht es, jede Unterstützung eindeutig einem Komitee und einer Gemeinde zuzuordnen – über kryptografische Content-IDs (CIDs) und digitale Signaturen |
 | 5 | Eine starke Authentifizierung über die staatliche eID und eine signierte IPFS-Registry stellen sicher, dass Einträge echt und fälschungssicher sind – jede Unterstützung trägt die geprüfte Herkunft (Gemeinde-Signatur) |
