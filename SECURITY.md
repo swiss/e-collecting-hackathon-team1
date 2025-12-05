@@ -12,6 +12,13 @@ currently being supported with security updates.
 | 4.0.x   | :white_check_mark: |
 | < 4.0   | :x:                |
 
+## The GNU Privacy Handbook 
+https://www.gnupg.org/gph/en/manual/book1.html
+
+Das Starter-Handbuch von GnuPG — ist eine praxisorientierte Einführung, die erklärt, wie man mit GnuPG sichere Kommunikation durch Schlüsselerzeugung, Schlüsselaustausch, Verschlüsselung/Entschlüsselung und digitale Signaturen realisiert. 
+
+The GNU Privacy Handbook is a practical beginner’s guide that explains how to use GnuPG for secure communication, including key generation, key exchange, encryption/decryption, and digital signatures.
+
 ## Reporting a Vulnerability
 
 Use this section to tell people how to report a vulnerability.
