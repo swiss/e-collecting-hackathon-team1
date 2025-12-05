@@ -61,7 +61,7 @@ Ein Dashboard zeigt in Echtzeit:
 
 Bürger*innen können prüfen, ob ihre Unterschrift registriert wurde:  
 → über einen CID-Lookup oder eine anonyme Prüfreferenz
-(nur der Hash wird angezeigt – keine Identitätsdaten).
+(nur der Hash wird angezeigt – keine Identitätsdaten)
 
 ## *Main challenges*
   
