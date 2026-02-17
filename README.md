@@ -484,7 +484,7 @@ async function submitBatch(batchData, privateKey) {
 ### Weaknesses / Challenges:
 
 - **Komplexe Koordination**: Erfordert enge organisatorische Abstimmung zwischen Gemeinden/Kantonen/Bund  
-  → Node-Governance, Replikationsrichtlinien)
+  → Node-Governance, Replikationsrichtlinien
 - **Datenschutz + Architektur**: Strikte Trennung von **Daten (verschlüsselt im IPFS)** und **Metadaten (in der CID-Registry)** notwendig, um DSG-/DSGVO-Konformität sicherzustellen   
 → Keine Klartextdaten oder personenbezogenen Informationen im IPFS-Index
 - **Schlüssel- & Zugriffsmanagement**: Verlust oder Diebstahl von Signatur-Schlüsseln (z. B. der Gemeinden) kann Integrität gefährden   
